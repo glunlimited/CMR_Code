@@ -1,0 +1,64 @@
+<!--
+	The default theme contents use theme inheritance.
+
+	Application themes can extend an existing global theme using the
+	extends attribute.  Existing themes include the following options:
+
+	1. webstandard 2. oneui 3. notes
+-->
+<theme extends="webstandard" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd" >
+	<!-- 
+		Use this pattern to include resources (such as style sheets
+		and JavaScript files that are used by this theme.
+	-->
+	<!--
+	<resource>
+		<content-type>text/css</content-type>
+		<href>mystylesheet.css</href>
+	</resource>
+	-->
+
+	<!--
+		Use this pattern to define property name/value pairs for controls
+	-->
+	<!--
+	<control>
+		<name>[Control Name]</name>
+		<property>
+			<name>[property Name]</name>
+			<value>[property Value]</value>
+		</property>
+	</control>
+	-->
+	<!--
+	<resource>
+		<content-type>text/css</content-type>
+		<href>Bootstrap/css/bootstrap.min.css</href>
+	</resource>
+	-->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>customcss.css</href>
+	</resource>
+	<resource>
+		<content-type>text/javascript</content-type>
+		<href>Bootstrap/js/bootstrap.min.js</href>
+	</resource>
+	<resource>
+		<content-type>text/javascript</content-type>
+		<href>jquery/jquery-1.9.0.js</href>
+	</resource>
+	<control override="false">
+  		<name>ViewRoot</name>
+  			<property>
+   				<name>pageTitle</name>
+   				<value>#{javascript:@DbTitle()}</value>
+  			</property>
+  			<!--  
+  			<property>
+   				<name>pageIcon</name>
+   				<value>favicon.ico</value>
+  			</property>
+  			-->
+ 	</control>
+</theme>

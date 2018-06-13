@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:panel dojoType="dijit.layout.ContentPane"
+			id="idBannerContainerContent" styleClass="divBannerContainerContent">
+			<xp:this.attrs>
+				<xp:attr name="region" value="top"></xp:attr>
+			</xp:this.attrs>			
+	</xp:panel>
+	<xp:panel dojoType="dijit.layout.ContentPane"
+			id="idBannerContainerMenu" styleClass="divBannerContainerMenu">
+			<xp:this.attrs>
+				<xp:attr name="region" value="bottom"></xp:attr>
+			</xp:this.attrs>
+			<xp:table id="idTableBannerMenu"
+				styleClass="tableBannerMenu">
+				<xp:tr>
+					<xp:td align="left">						
+						<xp:text escape="true"
+							styleClass="BannerMenuText" id="fldBannerMenuText">
+							<xp:this.value><![CDATA[#{javascript:if(viewScope.viewControl == "ccViewPendingApproval"){
+	return "All Pending Approval";
+}else if(viewScope.viewControl == "ccViewApproved"){
+	return "All Pending Publication";
+}else if(viewScope.viewControl == "ccViewRejected"){
+	return "All Rejected";
+}else if(viewScope.viewControl == "ccViewPublishedFiles"){
+	return "All Reports";
+}else if(viewScope.viewControl == "ccViewPublished"){
+	return "Published Archives";
+}else if(viewScope.viewControl == "ccWhoAmI"){
+	return "Who am I?";
+}else{
+	return "Home";
+}}]]></xp:this.value>
+						</xp:text>
+					</xp:td><xp:td align="right">
+	<xp:link escape="true" id="link1" rendered="false">
+		<xp:image id="image2" url="/question.gif" alt="CMP Help" rendered="false"></xp:image>
+		<xp:eventHandler event="onclick" submit="false">
+			<xp:this.script><![CDATA[alert("Under Construction");]]></xp:this.script>
+		</xp:eventHandler></xp:link>
+	 &#160; &#160; &#160;
+	<xp:text escape="true" id="cfUserName"
+		styleClass="BannerMenuText">
+		<xp:this.value><![CDATA[#{javascript:var currentuser = @UserName();
+var CommonN = @Name("[CN]",currentuser);
+"Welcome:  "+ CommonN;}]]></xp:this.value>
+		<xp:text.rcp rendered="false"></xp:text.rcp>
+	</xp:text></xp:td>
+				</xp:tr>
+			</xp:table>
+	</xp:panel>
+</xp:view>

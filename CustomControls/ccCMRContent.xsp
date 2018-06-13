@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:styleSheet href="/customcss.css"></xp:styleSheet>
+	</xp:this.resources>
+	
+	<xp:div style="float:left;">
+		<xp:div id="mainContainer" styleClass="mainContainer">
+			<xp:div id="rptMonthYear" styleClass="rptMonthYear">				
+				<xp:div id="yearDiv" styleClass="yearDiv">
+					<xp:label value="Choose Year" id="labelYear"></xp:label>
+					<xp:comboBox id="comboBoxYear" value="#{viewScope.CMRYear}" defaultValue="#{javascript:return @Text(@Year(@Today()));}">
+						<xp:selectItem itemLabel="2008"
+							itemValue="2008">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="2009"
+							itemValue="2009">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="2010"
+							itemValue="2010">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="2011"
+							itemValue="2011">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="2012"
+							itemValue="2012">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="2013"
+							itemValue="2013">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="2014"
+							itemValue="2014">
+						</xp:selectItem>
+						
+						<xp:eventHandler event="onchange" submit="true"
+							refreshMode="complete">
+						</xp:eventHandler>
+						</xp:comboBox>
+				</xp:div>
+				<xp:div id="monthDiv" styleClass="monthDiv">
+					<xp:label value="Choose Month" id="labelMonth" rendered="false"></xp:label>
+					<xp:comboBox id="comboBoxMonth" value="#{viewScope.CMRMonth}" defaultValue="#{javascript:return @Text(@Month(@Today()));}" rendered="false">
+						<xp:selectItem itemLabel="January"
+							itemValue="1">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="February"
+							itemValue="2">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="March"
+							itemValue="3">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="April"
+							itemValue="4">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="May" itemValue="5"></xp:selectItem>
+						<xp:selectItem itemLabel="June" itemValue="6"></xp:selectItem>
+						<xp:selectItem itemLabel="July" itemValue="7"></xp:selectItem>
+						<xp:selectItem itemLabel="August"
+							itemValue="8">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="September"
+							itemValue="9">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="October"
+							itemValue="10">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="November"
+							itemValue="11">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="December"
+							itemValue="12">
+						</xp:selectItem>
+						<xp:eventHandler event="onchange" submit="true"
+							refreshMode="complete">
+						</xp:eventHandler>
+						</xp:comboBox>
+				</xp:div>
+			</xp:div>
+			<xp:panel id="rptContentDiv" styleClass="rptContentDiv">
+				
+				<xp:div id="reportHeaderDiv" style="position:relative;"
+					styleClass="reportHeaderDiv">
+					<h1 class="headline">
+
+						<xp:text escape="true"
+							id="computedReportHeader">
+							<xp:this.value><![CDATA[#{javascript:var month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+
+
+
+return "Summary, Special and General Courts-Martial Results "; /* for " + month[parseInt(viewScope.get("CMRMonth")) - 1]+ " - " + viewScope.get("CMRYear"); */
+					}]]></xp:this.value>
+						</xp:text>
+
+					</h1>
+					<hr class="headline" />
+				</xp:div>
+
+				<xp:span>
+					<xp:text escape="true" id="computedField1">
+						<xp:this.value><![CDATA[#{javascript:return "WASHINGTON(US Army) -- The following reports the results of Summary, Spoecial, and General Courts Martials tried with in the United States Army ";
+
+/* in " + month[parseInt(viewScope.get("CMRMonth")) -1] + "  " + viewScope.get("CMRYear");*/}]]></xp:this.value>
+					</xp:text>
+				</xp:span>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:viewPanel rows="30" id="viewPanel1">
+					<xp:this.facets>
+						<xp:pager partialRefresh="true"
+							layout="Previous Group Next" xp:key="headerPager" id="pager1" panelPosition="right">
+						</xp:pager>
+					</xp:this.facets>
+					<xp:this.data>
+						<xp:dominoView var="view1"
+							viewName="Court Martial Results\All Published"
+							expandLevel="#{javascript:return false;}">
+
+
+
+						</xp:dominoView>
+					</xp:this.data>
+					<xp:viewColumn columnName="Year" id="viewColumn1">
+						<xp:this.converter>
+							<xp:convertNumber type="number"
+								integerOnly="true">
+							</xp:convertNumber>
+						</xp:this.converter>
+						<xp:viewColumnHeader value="Year"
+							id="viewColumnHeader1">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="Month" id="viewColumn2">
+						<xp:this.converter>
+							<xp:convertNumber type="number"
+								integerOnly="true">
+							</xp:convertNumber>
+						</xp:this.converter>
+						<xp:viewColumnHeader value="Month"
+							id="viewColumnHeader2">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="Region"
+						id="viewColumn3">
+						<xp:viewColumnHeader value="Region"
+							id="viewColumnHeader3">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="CourtsMartialType"
+						id="viewColumn4" rendered="false">
+						<xp:viewColumnHeader value="CourtsMartialType"
+							id="viewColumnHeader4">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="Rank" id="viewColumn5" rendered="false">
+						<xp:viewColumnHeader value="Rank"
+							id="viewColumnHeader5">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="FirstName"
+						id="viewColumn6" rendered="false">
+						<xp:viewColumnHeader value="FirstName"
+							id="viewColumnHeader6">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="LastName"
+						id="viewColumn7" rendered="false">
+						<xp:viewColumnHeader value="LastName"
+							id="viewColumnHeader7">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="ResultStatement"
+						id="viewColumn8">
+						<xp:viewColumnHeader value="Results"
+							id="viewColumnHeader8" style="text-align:center">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="City" id="viewColumn9" rendered="false">
+						<xp:viewColumnHeader value="City"
+							id="viewColumnHeader9">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="State"
+						id="viewColumn10" rendered="false">
+						<xp:viewColumnHeader value="State"
+							id="viewColumnHeader10">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+				</xp:viewPanel>
+			</xp:panel>
+		</xp:div>
+
+	</xp:div>
+
+
+</xp:view>

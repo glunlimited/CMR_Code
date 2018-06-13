@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:table style="width:200.0px">
+		<xp:tr id="tr6" styleClass="navRow">
+			<xp:td>
+				<xp:link escape="true" text="Home" id="link6"
+					styleClass="navLink">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:td>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action><![CDATA[#{javascript:context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:tr>
+		<xp:tr styleClass="navRow" id="tr1">
+			<xp:td>
+				<xp:link escape="true" text="Pending Approval"
+					id="link1" styleClass="navLink">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" id="eventHandler1"
+						refreshId="idContanerViewControls">
+						<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewPendingApproval");
+}]]></xp:this.action>
+						<xp:this.onComplete><![CDATA[XSP.partialRefreshGet('#{id:fldBannerMenuText}');
+]]></xp:this.onComplete>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:td>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" refreshId="idContanerViewControls" id="eventHandler6">
+				<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewPendingApproval");
+}]]></xp:this.action>
+				<xp:this.onComplete><![CDATA[XSP.partialRefreshGet('#{id:fldBannerMenuText}');
+]]></xp:this.onComplete>
+			</xp:eventHandler>
+		</xp:tr>
+		<xp:tr styleClass="navRow" id="tr2">
+			<xp:td>
+				<xp:link escape="true" text="Pending Publication"
+					id="link2" styleClass="navLink">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" id="eventHandler2"
+						refreshId="idContanerViewControls"
+						onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');">
+						<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewApproved");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:td>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" refreshId="idContanerViewControls"
+				onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');" id="eventHandler7">
+				<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewApproved");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:tr>
+		<xp:tr styleClass="navRow" id="tr3">
+			<xp:td>
+				<xp:link escape="true" text="Rejected" id="link3"
+					styleClass="navLink">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" id="eventHandler3"
+						refreshId="idContanerViewControls"
+						onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');">
+						<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewRejected");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:td>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" refreshId="idContanerViewControls"
+				onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');" id="eventHandler8">
+				<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewRejected");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:tr>
+		<xp:tr styleClass="navRow" id="tr4">
+			<xp:td>
+				<xp:link escape="true" text="Reports" id="link5"
+					styleClass="navLink">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" id="eventHandler5"
+						refreshId="idContanerViewControls"
+						onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');">
+						<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewPublishedFiles");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:td>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" refreshId="idContanerViewControls"
+				onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');" id="eventHandler9">
+				<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewPublishedFiles");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:tr>
+		<xp:tr styleClass="navRow" id="tr5">
+			<xp:td>
+				<xp:link escape="true" text="Published Archives"
+					id="link4" styleClass="navLink">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" id="eventHandler4"
+						refreshId="idContanerViewControls"
+						onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');">
+						<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewPublished");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:td>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" refreshId="idContanerViewControls"
+				onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');" id="eventHandler10">
+				<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccViewPublished");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:tr>
+	</xp:table></xp:view>

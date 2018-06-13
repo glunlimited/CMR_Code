@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var dt = new Date();
+//viewScope.viewFilterMonth = @Text(dt.getMonth()+1);
+viewScope.viewFilterYear = @Text(dt.getFullYear());}]]></xp:this.beforePageLoad>
+	<xp:panel style="width:100.0%">
+		
+		<xp:table style="width:100.0%">
+			<xp:tr>
+				<xp:td align="left">
+
+					<xp:button value="Expand All" id="buttonExpandView"
+						styleClass="actionbutton">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="viewPanel1">
+							<xp:this.action><![CDATA[#{javascript:var viewPanel = getComponent("viewPanel1");
+var model:com.ibm.xsp.model.domino.DominoViewDataModel = viewPanel.getDataModel();
+var container:com.ibm.xsp.model.domino.DominoViewDataContainer = model.getDominoViewDataContainer();
+container.expandAll();}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Collapse All"
+						id="buttonCollapseView" styleClass="actionbutton">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="viewPanel1">
+							<xp:this.action><![CDATA[#{javascript:var viewPanel = getComponent("viewPanel1");
+var model:com.ibm.xsp.model.domino.DominoViewDataModel = viewPanel.getDataModel();
+var container:com.ibm.xsp.model.domino.DominoViewDataContainer = model.getDominoViewDataContainer();
+container.collapseAll();
+}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+				</xp:td>
+				<xp:td align="right">
+				<xp:span style="align:right;">
+					<xp:label value="Month: " id="idReportMonth" rendered="false">
+					</xp:label>
+					<xp:comboBox id="comboBox2"
+						value="#{viewScope.viewFilterMonth}"
+						defaultValue="#{javascript:viewScope.viewFilterMonth}" rendered="false">
+						<xp:selectItem itemLabel="January"
+							itemValue="1">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="February"
+							itemValue="2">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="March"
+							itemValue="3">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="April"
+							itemValue="4">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="May" itemValue="5"></xp:selectItem>
+						<xp:selectItem itemLabel="June" itemValue="6"></xp:selectItem>
+						<xp:selectItem itemLabel="July" itemValue="7"></xp:selectItem>
+						<xp:selectItem itemLabel="August"
+							itemValue="8">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="September"
+							itemValue="9">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="October"
+							itemValue="10">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="November"
+							itemValue="11">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="December"
+							itemValue="12">
+						</xp:selectItem>
+						<xp:eventHandler event="onchange" submit="true"
+							refreshMode="partial" refreshId="idResultsView">
+						</xp:eventHandler>
+					</xp:comboBox>
+					<xp:label value="Year: " id="idReportYear"></xp:label>
+					<xp:comboBox id="comboBoxYear"
+						value="#{viewScope.viewFilterYear}"
+						defaultValue="#{javascript:viewScope.viewFilterYear}">
+						<xp:selectItems>
+							<xp:this.value><![CDATA[#{javascript:
+var years = ["","","","","","","","","",""];
+	(function(){		
+		var d = new Date();
+		var endyear = d.getFullYear() + 6;
+		var j=0;
+		for (i = 9;i >= 0;i--){
+			years[i] = @Text(endyear-j)
+			j++			
+		}  
+})();
+
+return years + "|" + years;
+}]]></xp:this.value>
+						</xp:selectItems>
+						<xp:eventHandler event="onchange" submit="true"
+							refreshMode="partial" refreshId="idResultsView">
+						</xp:eventHandler>
+					</xp:comboBox>
+				</xp:span>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td colspan="2">
+					<xp:panel id="idResultsView" style="width:100.0%">
+						<xp:viewPanel rows="30" id="viewPanel1"
+							rowClasses="even,odd" var="rowData" viewStyle="width:100.0%">
+							<xp:this.facets>
+								<xp:pager partialRefresh="true"
+									layout="Previous Group Next" xp:key="headerPager"
+									id="pager1">
+								</xp:pager>
+
+								<xp:pager partialRefresh="true"
+									layout="Previous Group Next" xp:key="footerPager"
+									id="pager2">
+								</xp:pager>
+							</xp:this.facets>
+
+
+							<xp:this.data>
+								<xp:dominoView var="view1"
+									viewName="(Rejected)">
+
+
+									<xp:this.categoryFilter><![CDATA[#{javascript://var vKeys = new java.util.Vector();
+/*
+var v:string ="";
+if(!!viewScope.get("viewFilterYear")){
+//	vKeys.add(@Text(viewScope.viewFilterYear));
+	v = viewScope.viewFilterYear;
+	if(!!viewScope.get("viewFilterMonth")){
+		//vKeys.add(@Text(viewScope.viewFilterMonth));
+		v = v + "\\" +@Text(viewScope.viewFilterMonth);
+	}
+}
+
+//return vKeys
+
+//return v */
+//return viewScope.viewFilterYear //+ "\\\" + viewScope.viewFilterMonth;}]]></xp:this.categoryFilter>
+								</xp:dominoView>
+							</xp:this.data>
+							<xp:viewColumn columnName="Year"
+								id="viewColumn1" rendered="false">
+								<xp:this.converter>
+									<xp:convertNumber type="number"
+										integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+								<xp:viewColumnHeader value="Year"
+									id="viewColumnHeader1">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="Month"
+								id="viewColumn2">
+								<xp:this.converter>
+									<xp:convertNumber type="number"
+										integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+								<xp:viewColumnHeader value="Month"
+									id="viewColumnHeader2">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="Region"
+								id="viewColumn3" displayAs="link">
+								<xp:viewColumnHeader value="Region"
+									id="viewColumnHeader3">
+								</xp:viewColumnHeader>
+
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial"
+									refreshId="divResultDocumentViewer">
+									<xp:this.action><![CDATA[#{javascript:if(!rowData.isCategory()){
+	viewScope.put("ResultUnid", rowData.getUniversalID());
+}
+
+
+
+}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:viewColumn>
+							<xp:viewColumn
+								columnName="CourtsMartialType" id="viewColumn4">
+								<xp:viewColumnHeader
+									value="Type" id="viewColumnHeader4">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="Rank"
+								id="viewColumn5">
+								<xp:viewColumnHeader value="Rank"
+									id="viewColumnHeader5">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="FirstName"
+								id="viewColumn6">
+								<xp:viewColumnHeader value="First Name"
+									id="viewColumnHeader6">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="LastName"
+								id="viewColumn7">
+								<xp:viewColumnHeader value="Last Name"
+									id="viewColumnHeader7">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="ResultStatement"
+								id="viewColumn8" rendered="false">
+								<xp:viewColumnHeader
+									value="ResultStatement" id="viewColumnHeader8">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="City"
+								id="viewColumn9" rendered="false">
+								<xp:viewColumnHeader value="City"
+									id="viewColumnHeader9">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="State"
+								id="viewColumn10" rendered="false">
+								<xp:viewColumnHeader value="State"
+									id="viewColumnHeader10">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+						</xp:viewPanel>
+					</xp:panel>
+
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+	</xp:panel>
+	<br />
+	<br />
+	<br />
+	
+</xp:view>

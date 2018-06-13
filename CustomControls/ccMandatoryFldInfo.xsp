@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	dojoParseOnLoad="true">
+	<xp:this.dataContexts>
+		<xp:dataContext var="validationFailed"
+			value="#{javascript:facesContext.getMessages().hasNext()}">
+		</xp:dataContext>
+		<xp:dataContext var="dcxtValidationErrors">
+			<xp:this.value>
+				<![CDATA[#{javascript:if (!validationFailed) return "null";
+var jsonMessages=[];
+var itrIds = facesContext.getClientIdsWithMessages();
+var isDirty=false;
+var objMsg;
+var tmp;
+while (itrIds.hasNext()) {
+	var tmp= itrIds.next();
+	if (tmp!=null) {
+		clientId=tmp.toString();
+		var itrMessages=facesContext.getMessages(clientId);
+		while(itrMessages.hasNext()) {
+			var Message=itrMessages.next();
+			objMsg={};
+			objMsg.id=clientId;
+			objMsg.message=Message.getDetail();
+			jsonMessages.push(objMsg);
+			isDirty=true;
+		}
+	}
+}
+if (isDirty) {
+	viewScope.VALIDATION_ERRORS=toJson(jsonMessages);
+} else {
+	viewScope.VALIDATION_ERRORS="null";
+}
+				}]]>
+			</xp:this.value>
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.Tooltip"></xp:dojoModule>
+		<xp:script src="/CommonCSJSUtils.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xp:this.rendered><![CDATA[#{javascript:if (typeof currentDocument=="undefined") {
+	return true;
+} else {
+	return currentDocument.isEditable();
+}}]]></xp:this.rendered>
+	<xp:div id="validationErrors"
+		rendered="#{javascript:validationFailed}" style="display:none">
+		<xp:messages layout="table" disableTheme="true"></xp:messages>
+	</xp:div>
+	<xp:div styleClass="fld_mandatory_info"
+		style="width:200px;float:right"
+		rendered="#{javascript:!(validationFailed || compositeData.showInfoMandatory==false)}">
+		Highlighted fields are mandatory
+	</xp:div>
+	<xp:div
+		style="clear:right;overflow:hidden;height:1px;padding:0px;margin:0px"
+		loaded="${javascript:context.getUserAgent().isIE(6,6) || context.getUserAgent().isIE(7,7)}">
+	</xp:div>
+	<xp:div rendered="#{javascript:validationFailed}"
+		styleClass="fld_mandatory_info validationFailed"
+		id="divValidationFailed" style="width:440px;">
+		<xp:span id="spanErrorDetails">
+			The action failed, as it did&#160;not pass the validation.
+			Mouse over for details...
+		</xp:span>
+	</xp:div>
+	
+	<xp:eventHandler event="onClientLoad" submit="false"
+		rendered="#{javascript:validationFailed}">
+		<xp:this.script><![CDATA[loadValidationErrors("#{id:validationErrors}","#{id:spanErrorDetails}");
+attachValidationMessages(#{javascript:viewScope.VALIDATION_ERRORS});]]></xp:this.script>
+	</xp:eventHandler>
+</xp:view>

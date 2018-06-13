@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>ccFooter</component-type>
+    <composite-name>ccFooter</composite-name>
+    <composite-file>/ccFooter.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>pathToDatabase</property-name>
+      <property-class>string</property-class>
+      <display-name>Release Notes Web Path</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor/>
+          <default-value>/sites/help.nsf</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>By default, this is the path to the sites help database where the footer service resides. However, a developer may want not want to use the footer service and force a redirection to somewhere else.&#xd;
+The following creates the link behind Release Notes:&#xd;
+compositeData.relWebPath + compositeData.relServiceCommand + compositeData.relLookupKey</description>
+    </property>
+    <property>
+      <property-name>footerService</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>/get.xsp/footer?lkup=footer</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>This only needs to change if you are choosing not to use the footer service. This indicates the page where the service resides and the path to the service.&#xd;
+The following creates the link behind Release Notes:&#xd;
+compositeData.relWebPath + compositeData.relServiceCommand + compositeData.relLookupKey</description>
+      <display-name>Release Notes Service Command</display-name>
+    </property>
+    <property>
+      <property-name>releaseNote</property-name>
+      <property-class>string</property-class>
+      <display-name>Release Note Lookup Key</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor/>
+          <default-value>Enter_Release_Note_Key</default-value>
+          <validation-formula>!(value.equals("Enter_Release_Note_Key"))</validation-formula>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>If using the get service in the helps database, this property helps the footer know which release notice to provide your user.&#xd;
+the following creates the link behind Release Notes:&#xd;
+compositeData.relWebPath + compositeData.relServiceCommand + compositeData.relLookupKey</description>
+    </property>
+    <property>
+      <property-name>linkTarget</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
+          <editor-parameter>_blank&#xd;
+_self&#xd;
+_top</editor-parameter>
+          <default-value>_top</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>targetXPage</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>helpviewer.xsp</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>appendToUrl</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value/>
+        </designer-extension>
+      </property-extension>
+      <description>Only use if you need to pass addition information via the url when the user clicks on a footer link. Cannot contain "&amp;lkup=".</description>
+    </property>
+  </composite-component>
+</faces-config>

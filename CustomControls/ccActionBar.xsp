@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:div>
+		<xp:button value="Expand All" id="button1"></xp:button>
+		<xp:button value="Collapse All" id="button2"></xp:button>
+		<xp:button value="Publish Documents" id="button5"></xp:button>
+		<xp:button value="Approve Document" id="button3"></xp:button>
+		<xp:button value="Reject Document" id="button4"></xp:button>
+	</xp:div>
+</xp:view>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='Set Region' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='85258288000D10AA' hide='v3' publicaccess='false' designerversion='8.5.3'>
+<noteinfo noteid='1aa' unid='AA9DA41BA137289085257CEF006616B1' sequence='11'>
+<created><datetime dst='true'>20140606T143504,81-04</datetime></created>
+<modified><datetime dst='true'>20180508T222244,37-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140135,12-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222244,37-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222244,37-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<designchange><datetime dst='true'>20150430T140136,03-04</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='selected'/><code event='action'>
+<simpleaction action='runformula'><formula>FIELD ResultStatement := "At a [COURTMARTIALTYPE] in [GCMCACITY], [GCMCASTATE] [ACCUSEDRANK] [ACCUSEDFULLNAME], USA, was tried for [CHARGES]. On [SENTENCEDATE], he/she was [LANGUAGEOFSENTENCE].";
+
+SELECT @All</formula></simpleaction></code>
+<rundata processeddocs='21' exitcode='0'>
+<agentmodified><datetime dst='true'>20140606T163042,52-04</datetime></agentmodified>
+<agentrun><datetime dst='true'>20140606T163046,45-04</datetime></agentrun>
+<runlog>Started running agent 'Set Region' on 06/06/2014 04:30:46 PM
+Running on selected documents: 21 total
+Found 21 document(s) that match search criteria
+21 document(s) were modified by formula
+Done running agent 'Set Region' on 06/06/2014 04:30:46 PM
+</runlog></rundata></agent>
+

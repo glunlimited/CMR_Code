@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='PublishResultsToPDF' alias='PublishResultsToPDF' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.0' replicaid='85258288000D10AA' hide='v3'
+ publicaccess='false' designerversion='8.5.3'>
+<noteinfo noteid='1ce' unid='F3203AA6AE9E6F2285257D2E00618B47' sequence='7'>
+<created><datetime dst='true'>20140808T134526,47-04</datetime></created>
+<modified><datetime dst='true'>20180508T222244,49-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140135,02-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222244,49-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222244,49-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<designchange><datetime dst='true'>20150430T140135,97-04</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='runonce'/><code event='action'><javaproject class='JavaAgent.class'
+ codepath='c:\Program Files (x86)\IBM\Lotus\Notes\Data'><java name='JavaAgent.java'>import lotus.domino.*;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+
+
+
+
+
+public class JavaAgent extends AgentBase {
+
+    public void NotesMain() {
+    	final String TITLE1= "Summarized Report of Results of Trial";
+    	final String TITLE2= "01 July 2014 – 31 July 2014";
+    	View vwResultsPendingPublishing = null;
+    	PDDocument document = null;
+		PDPage page = null;
+		PDFont font = null;
+		PDPageContentStream contentStream = null;
+		int fontSize = 12; // Or whatever font size you want.
+		int marginTop = 30;
+		float titleWidth = 0;
+		float titleHeight = 0;
+      try {
+          Session session = getSession();
+          AgentContext agentContext = session.getAgentContext();
+
+          // (Your code goes here)
+          document=new PDDocument();
+          page = new PDPage();
+          document.addPage( page );
+       // Create a new font object selecting one of the PDF base fonts
+          font = PDType1Font.COURIER_BOLD;
+          
+       // Start a new content stream which will "hold" the to be created content
+          contentStream = new PDPageContentStream(document, page);
+          
+       // Define a text content stream using the selected font, moving the cursor and drawing the text 
+          titleWidth = font.getStringWidth(TITLE1) / 1000 * fontSize;
+          titleHeight = font.getFontDescriptor().getFontBoundingBox().getHeight() / 1000 * fontSize;
+          System.out.println("titleHeight: " + titleHeight);
+
+          contentStream.beginText();
+          contentStream.setFont( font, fontSize );        
+          contentStream.moveTextPositionByAmount((page.getMediaBox().getWidth() - titleWidth) / 2, page.getMediaBox().getHeight() - marginTop - titleHeight);
+          contentStream.drawString( TITLE1);
+          contentStream.appendRawCommands("T*\n");
+          contentStream.endText(); 
+          
+          titleWidth = font.getStringWidth(TITLE2) / 1000 * fontSize;
+          contentStream.beginText();
+          contentStream.setFont( font, fontSize );        
+          contentStream.moveTextPositionByAmount((page.getMediaBox().getWidth() - titleWidth) / 2, page.getMediaBox().getHeight() - marginTop - titleHeight *2);
+          contentStream.drawString(TITLE2);
+          contentStream.appendRawCommands("T*\n");
+          contentStream.endText(); 
+          
+       // Make sure that the content stream is closed:
+          contentStream.close();
+
+          // Save the results and ensure that the document is properly closed:
+          document.save( "C:\\Users\\washingtongl\\Documents\\Temp\\Destination\\Report.pdf");
+          document.close();
+          
+          
+          
+          
+
+      } catch(Exception e) {
+          e.printStackTrace();
+       }
+   }
+}</java></javaproject></code>
+<rundata processeddocs='0' exitcode='0'>
+<agentmodified><datetime dst='true'>20140808T164616,41-04</datetime></agentmodified></rundata>
+<item name='$JavaCompilerSource'><text>1.3</text></item>
+<item name='$JavaCompilerTarget'><text>1.2</text></item></agent>
+

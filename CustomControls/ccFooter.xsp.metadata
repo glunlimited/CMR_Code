@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="85258288000D10AA" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1e2" sequence="19" unid="D5CE519F0EAEA17085257D31005271C3">
+<created><datetime dst="true">20140811T110030,75-04</datetime></created>
+<modified><datetime dst="true">20180508T222244,59-04</datetime></modified>
+<revised><datetime dst="true">20150430T140134,18-04</datetime></revised>
+<lastaccessed><datetime dst="true">20180508T222244,59-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180508T222244,59-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<item name="$Comment"><text>Howard H's Footer</text></item>
+<item name="$TITLE"><text>ccFooter.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+
+
+
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ccFooter.xsp</text></item>
+
+</note>

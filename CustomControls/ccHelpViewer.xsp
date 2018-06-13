@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.layout.ContentPane"></xp:dojoModule>
+	</xp:this.resources>
+	<xp:div dojoType="dijit.layout.ContentPane"
+		style="margin-left:25.0px;margin-right:25.0px;margin-top:10.0px;border-color:rgb(192,192,192);border-style:solid;border-width:thin">
+		<xp:this.dojoAttributes>
+			<xp:dojoAttribute name="href">
+				<xp:this.value><![CDATA[#{javascript:var urlPath:string = compositeData.pathToDatabase + compositeData.pageService;
+var pageRef:string = context.getUrlParameter("lkup");
+var brand:string = context.getUrlParameter("brand");
+return urlPath + pageRef + ((brand)?('&brand='+brand):'');}]]></xp:this.value>
+			</xp:dojoAttribute>
+		</xp:this.dojoAttributes>
+		<xp:this.rendered><![CDATA[#{javascript:context.getUrlParameter("lkup")}]]></xp:this.rendered>
+	</xp:div>
+</xp:view>

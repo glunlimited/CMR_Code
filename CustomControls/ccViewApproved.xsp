@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var dt = new Date();
+//viewScope.viewFilterMonth = @Text(dt.getMonth()+1);
+viewScope.viewFilterYear = @Text(dt.getFullYear());}]]></xp:this.beforePageLoad>
+	<xp:panel style="width:100.0%" id="panelPendingPublication">
+		
+		<xp:table style="width:100.0%">
+			<xp:tr>
+				<xp:td align="left">
+
+					<xp:button value="Expand All" id="buttonExpandView"
+						styleClass="actionbutton">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="viewPanel1">
+							<xp:this.action><![CDATA[#{javascript:var viewPanel = getComponent("viewPanel1");
+var model:com.ibm.xsp.model.domino.DominoViewDataModel = viewPanel.getDataModel();
+var container:com.ibm.xsp.model.domino.DominoViewDataContainer = model.getDominoViewDataContainer();
+container.expandAll();}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Collapse All"
+						id="buttonCollapseView" styleClass="actionbutton">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="viewPanel1">
+							<xp:this.action><![CDATA[#{javascript:var viewPanel = getComponent("viewPanel1");
+var model:com.ibm.xsp.model.domino.DominoViewDataModel = viewPanel.getDataModel();
+var container:com.ibm.xsp.model.domino.DominoViewDataContainer = model.getDominoViewDataContainer();
+container.collapseAll();
+}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Publish selected cases to PDF"
+						id="buttonPublish" styleClass="actionbutton" rendered="false">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="panelPendingPublication">
+							<xp:this.action><![CDATA[#{javascript:
+var viewPanel=getComponent("viewPanel1");
+var docIDArray=viewPanel.getSelectedIds();
+if(requestScope.ErrorText !== ""){
+	requestScope.ErrorText="";
+}
+if (docIDArray.length==0) {
+	requestScope.ErrorText="Please select the documents that you want to publish";
+	return;
+}
+var docNew=database.createDocument();
+docNew.replaceItemValue("Form","tempAgentParams");
+docNew.replaceItemValue("UserName",context.getUser().getDistinguishedName());
+var vctIDs:java.util.Vector = new java.util.Vector();
+for(var i=0;i < docIDArray.length; i++)
+{
+	vctIDs.add(docIDArray[i]);
+}
+docNew.replaceItemValue("ids",vctIDs);
+docNew.save(true,false);
+var publishAgent:NotesAgent = database.getAgent("(PublishResultsToPDF)");
+publishAgent.runOnServer(docNew.getNoteID());}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+				<xp:button value="Publish selected cases to DOCX" id="button1" styleClass="actionbutton">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="panelPendingPublication">
+							<xp:this.action><![CDATA[#{javascript:
+var viewPanel=getComponent("viewPanel1");
+var docIDArray=viewPanel.getSelectedIds();
+if(requestScope.ErrorText !== ""){
+	requestScope.ErrorText="";
+}
+if (docIDArray.length==0) {
+	requestScope.ErrorText="Please select the documents that you want to publish";
+	return;
+}
+var docNew=database.createDocument();
+docNew.replaceItemValue("Form","tempAgentParams");
+docNew.replaceItemValue("UserName",context.getUser().getDistinguishedName());
+var vctIDs:java.util.Vector = new java.util.Vector();
+for(var i=0;i < docIDArray.length; i++)
+{
+	vctIDs.add(docIDArray[i]);
+}
+docNew.replaceItemValue("ids",vctIDs);
+docNew.save(true,false);
+var publishAgent:NotesAgent = database.getAgent("(PublishResultsToDocx)");
+publishAgent.runOnServer(docNew.getNoteID());}]]></xp:this.action>
+						</xp:eventHandler>
+				</xp:button></xp:td>
+				<xp:td>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td colspan="2">
+					<xp:text escape="true" id="computedField1" value="#{requestScope.ErrorText}" style="font-weight:bold;color:rgb(255,0,0)"><xp:this.rendered><![CDATA[#{javascript:if(requestScope.ErrorText === "" || requestScope.ErrorText === null){
+	return false;
+}else{
+	return true;
+} }]]></xp:this.rendered></xp:text></xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td colspan="2">
+					<xp:panel id="idResultsView" style="width:100.0%">
+						<xp:viewPanel rows="3000" id="viewPanel1"
+							rowClasses="even,odd" var="rowData" viewStyle="width:100.0%">
+							<xp:this.facets>
+								<xp:pager partialRefresh="true"
+									layout="Previous Group Next" xp:key="headerPager"
+									id="pager1">
+								</xp:pager>
+
+								<xp:pager partialRefresh="true"
+									layout="Previous Group Next" xp:key="footerPager"
+									id="pager2">
+								</xp:pager>
+							</xp:this.facets>
+
+
+							<xp:this.data>
+								<xp:dominoView var="view1"
+									viewName="(Approved)">
+
+
+									<xp:this.categoryFilter><![CDATA[#{javascript:
+//return v */
+//return viewScope.viewFilterYear //+ "\\\" + viewScope.viewFilterMonth;}]]></xp:this.categoryFilter>
+								</xp:dominoView>
+							</xp:this.data>
+							<xp:viewColumn columnName="Year"
+								id="viewColumn1" rendered="false">
+								<xp:this.converter>
+									<xp:convertNumber type="number"
+										integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+								<xp:viewColumnHeader value="Year"
+									id="viewColumnHeader1">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="Month"
+								id="viewColumn2">
+								<xp:this.converter>
+									<xp:convertNumber type="number"
+										integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+
+								<xp:this.styleClass><![CDATA[#{javascript:if (rowData.isCategory()) {
+    return 'category';
+} else {
+    return '';
+}}]]></xp:this.styleClass>
+								<xp:viewColumnHeader value="Month"
+									id="viewColumnHeader2">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn id="viewColumn12"
+								showCheckbox="true" columnName="MonthNumber"
+								displayAs="hidden">
+								<xp:this.facets>
+									<xp:viewColumnHeader xp:key="header"
+										id="viewColumnHeader12" showCheckbox="true" value="All">
+									</xp:viewColumnHeader>
+								</xp:this.facets>
+							</xp:viewColumn>
+							<xp:viewColumn id="viewColumn11"
+								columnName="PunishmentDate" displayAs="link">
+								<xp:this.facets>
+									<xp:viewColumnHeader xp:key="header"
+										id="viewColumnHeader11" value="Date">
+									</xp:viewColumnHeader>
+								</xp:this.facets>
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial" id="eventHandler1"
+									refreshId="divResultDocumentViewer">
+									<xp:this.action><![CDATA[#{javascript:if(!rowData.isCategory()){
+	viewScope.put("ResultUnid", rowData.getUniversalID());
+}
+}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="Region"
+								id="viewColumn3">
+								<xp:viewColumnHeader value="Region"
+									id="viewColumnHeader3">
+								</xp:viewColumnHeader>
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial"
+									refreshId="divResultDocumentViewer" id="eventHandler2">
+									<xp:this.action><![CDATA[#{javascript:if(!rowData.isCategory()){
+	viewScope.put("ResultUnid", rowData.getUniversalID());
+}
+
+
+
+}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:viewColumn>
+							<xp:viewColumn
+								columnName="CourtsMartialType" id="viewColumn4">
+								<xp:viewColumnHeader value="Type"
+									id="viewColumnHeader4">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="Rank"
+								id="viewColumn5">
+								<xp:viewColumnHeader value="Rank"
+									id="viewColumnHeader5">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="FirstName"
+								id="viewColumn6">
+								<xp:viewColumnHeader value="First Name"
+									id="viewColumnHeader6">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="LastName"
+								id="viewColumn7">
+								<xp:viewColumnHeader value="Last Name"
+									id="viewColumnHeader7">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="ResultStatement"
+								id="viewColumn8" rendered="false">
+								<xp:viewColumnHeader
+									value="ResultStatement" id="viewColumnHeader8">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="City"
+								id="viewColumn9" rendered="false">
+								<xp:viewColumnHeader value="City"
+									id="viewColumnHeader9">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+							<xp:viewColumn columnName="State"
+								id="viewColumn10" rendered="false">
+								<xp:viewColumnHeader value="State"
+									id="viewColumnHeader10">
+								</xp:viewColumnHeader>
+							</xp:viewColumn>
+						</xp:viewPanel>
+						<xp:eventHandler event="onClientLoad"
+							submit="false">
+							<xp:this.script><![CDATA[// Get a list of all rows in the view panel.
+dojo.query('.xspDataTableViewPanel table tr').forEach(function(nodeRow, indexRow) {
+ 
+  // Locate the category cells within the context of the view rows
+  dojo.query('td.category', nodeRow).forEach(function(nodeCat){
+ 
+    // Execute a search on the parent node (row) and remove all cells until data is found
+    var emptyCells = 0;
+    var keepCounting = true;
+    dojo.query('td', nodeRow).forEach(function(nodeTD, indexTD){
+ 
+      // Check all non-category cells until a non-empty cell is found
+      if ((keepCounting) && !dojo.hasClass(nodeTD, 'category')){
+        if (nodeTD.innerHTML == '') {
+          emptyCells +=1;
+          dojo.destroy(nodeTD);
+        } else {
+          keepCounting = false;
+        }
+      }
+    });
+ 
+    // Add a colspan attribute to the category cell (1 + [# of empty cells])
+    dojo.attr(nodeCat, 'colspan', 1+emptyCells);
+  });
+ 
+});]]></xp:this.script>
+						</xp:eventHandler></xp:panel>
+
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+	</xp:panel>
+	<br />
+	<br />
+	<br />	
+</xp:view>

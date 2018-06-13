@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='CMPublished' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='85258288000D10AA' nocompose='true' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='232' unid='4F2E5DDE73D356CB85257D330080A76D' sequence='17'>
+<created><datetime dst='true'>20140813T192514,69-04</datetime></created>
+<modified><datetime dst='true'>20180508T222244,97-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140134,56-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222244,97-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222244,97-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<par def='1'/>
+<par def='1'><field type='richtext' kind='editable' name='Body'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAEAAAA=
+</compositedata></par></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>CMPublished</text></item></form>
+

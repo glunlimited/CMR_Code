@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='Courts-Martial Results\Published Files' alias='(PublishedPdfs)'
+ xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0' replicaid='85258288000D10AA'
+ showinmenu='false' publicaccess='false' designerversion='8.5.3' unreadmarks='none'
+ onopengoto='lastopened' onrefresh='displayindicator' headers='beveled' opencollapsed='false'
+ showresponsehierarchy='true' showmargin='true' shrinkrows='false' extendlastcolumn='false'
+ showhierarchies='false' unreadcolor='black' rowlinecount='1' headerlinecount='1'
+ rowspacing='1' bgcolor='white' totalscolor='black' headerbgcolor='white'
+ boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='266' unid='78956905052F882B85257D330080A76F' sequence='35'>
+<created><datetime dst='true'>20140813T192514,71-04</datetime></created>
+<modified><datetime dst='true'>20180508T222245,19-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140134,82-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222245,19-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222245,19-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby><code
+ event='selection'><formula>SELECT  Form="CMPublished"</formula></code>
+<column sort='descending' hidedetailrows='false' itemname='Year' width='5.6250'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='true' sortnocase='true'
+ showaslinks='false' categorized='true' twisties='true'><columnheader title='Year'><font
+ size='9pt' style='bold'/></columnheader><numberformat format='fixed' punctuated='false'
+ parens='false' percent='false' bytes='false' decimalsym='.' thousandssep=','
+ currencysymtype='custom' currencysym='$' usecustomsym='false'/><code event='value'><formula
+>@Text(@Year(@Created))</formula></code></column>
+<column sort='descending' hidedetailrows='false' itemname='$21' width='1'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' hidden='true'><columnheader><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@Month(@Created)</formula></code></column>
+<column sort='descending' hidedetailrows='false' itemname='Month' width='8.2500'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' categorized='true' twisties='true'><columnheader title='Month'><font
+ size='9pt' style='bold'/></columnheader><numberformat format='fixed' punctuated='false'
+ parens='false' percent='false' bytes='false' decimalsym='.' thousandssep=','
+ currencysymtype='custom' currencysym='$' usecustomsym='false'/><code event='value'><formula
+>index := @Month(@Created);
+months :=@Implode("January": "February": "March": "April":"May": "June": "July": "August": "September":"October": "November": "December";",");
+ @Word(months;",";index)</formula></code></column>
+<column hidedetailrows='false' itemname='$19' width='12.8750' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>"&lt;a href=\"/"+@WebDbName + "/0/" + @Text(@DocumentUniqueID) + "/$FILE/" + @Subset(@AttachmentNames;1)  + "?OpenElement\" target=\"_blank\"&gt;Open&lt;/a&gt;"</formula></code><code
+ event='hidewhen'><formula>@If(@ClientType = "Notes"; @True;@False)</formula></code></column>
+<column sort='descending' hidedetailrows='false' itemname='DatePublished'
+ width='10' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
+ sortnocase='true' showaslinks='false'><columnheader title='Date Published'><font
+ size='9pt' style='bold'/></columnheader><code event='value'><formula>@Created</formula></code></column>
+<column hidedetailrows='false' itemname='FileName' width='20.2500' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='File Name'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@AttachmentNames</formula></code></column>
+<column hidedetailrows='false' itemname='$18' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'
+ extwindowwidth='true'><columnheader><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@Name([CN];PUBLISHEDBY)</formula></code></column></view>
+

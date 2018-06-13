@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='(vwKeywords)' alias='vwKeywords' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.0' replicaid='85258288000D10AA' showinmenu='false'
+ allowdocselection='true' publicaccess='false' designerversion='8.5.3' unreadmarks='standard'
+ onopengoto='lastopened' onrefresh='displayindicator' headers='simple' opencollapsed='false'
+ showresponsehierarchy='true' showmargin='true' shrinkrows='true' extendlastcolumn='true'
+ showhierarchies='false' unreadcolor='maroon' rowlinecount='4' headerlinecount='1'
+ rowspacing='1.25' haslinkcolumn='true' bgcolor='white' altrowcolor='#efefef'
+ totalscolor='blue' headerbgcolor='#bad5c5' boldunreadrows='false' evaluateactions='false'
+ allownewdocuments='false' allowcustomizations='true' hidemarginborder='true'
+ marginwidth='0px 0px 1px' marginbgcolor='white' uniquekeys='false' formatnoteid='8178B1C14B1E9B6B8525624F0062FE9F'>
+<noteinfo noteid='286' unid='E9FCBE0276DADA9585257D38004AB6C4' sequence='9'>
+<created><datetime dst='true'>20140818T093604,52-04</datetime></created>
+<modified><datetime dst='true'>20180508T222245,35-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140135,54-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222245,35-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222245,35-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Michael L Jones/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby><code
+ event='selection'><formula>SELECT	form="frmKeyword"</formula></code>
+<actionbar useappletinbrowser='true' bgcolor='#8bbc9d' bordercolor='black'><actionbarstyle
+ height='4.7500ex'><font size='9pt' name='multilingual'/></actionbarstyle>
+<actionbuttonstyle margintype='fixed' margin='5' bgcolor='#bad5c5' displayborder='notesstyle'/><font
+ size='9pt' name='multilingual'/><border width='0px 0px 1px'/>
+<action title='Categori_ze' showinbar='false' hide='web' systemcommand='categorize'/>
+<action title='Send Docu_ment' showinmenu='false' showinbar='false' hide='web'
+ systemcommand='send'/>
+<action title='_Move to Folder...' showinbar='false' hide='web' systemcommand='movetofolder'/>
+<action title='_Remove from Folder...' showinbar='false' hide='web' systemcommand='removefromfolder'/>
+<action title='_Forward' showinbar='false' hide='web' systemcommand='forward'/>
+<action title='_Edit Document' showinbar='false' hide='web' systemcommand='edit'/>
+<action title='New Main Topic' showinmenu='false' hide='preview previewedit'><code
+ event='click'><formula>viewname := @Subset(@ViewTitle; -1);
+@SetProfileField("tmpProfile"; "viewtitle"; viewname);
+@PostedCommand([Compose];"MainTopic")</formula></code></action>
+<action title='New Response' showinmenu='false' hide='preview edit previewedit'><code
+ event='click'><formula>viewname := @Subset(@ViewTitle; -1);
+@SetProfileField("tmpProfile"; "viewtitle"; viewname);
+@PostedCommand([Compose];"Response")</formula></code><code event='hidewhen'><formula
+>REM {hide from web if it's in a view};
+@ClientType != "Notes" &amp; !@IsAvailable(form)</formula></code></action>
+<action title='Move to Trash' showinmenu='false' hide='notes'><code event='click'><formula
+>@Command([MoveToTrash])</formula></code></action>
+<action title='EmptyTrash' showinmenu='false' hide='notes'><code event='click'><formula
+>@Command([EmptyTrash])</formula></code></action>
+<action title='Search' showinmenu='false' hide='notes'><code event='click'><formula
+>REM {Web only; in views};
+@Command([ViewShowSearchBar])</formula></code></action>
+<action title='Chat with Author' hide='preview edit previewedit web'><code
+ event='click'><formula>_title	:= "Chat with Author";
+_msg		:= "This is an Anonymous posting. Unable to initiate a chat with an Anonymous author.";
+
+@If(	@Contains(@LowerCase(form); "anonymous");
+	@Return(@Prompt([Ok]; _title; _msg)); ""
+);
+
+@Command([SendInstantMessage]; From)</formula></code><code event='hidewhen'><formula
+>@Version &lt; @Text(250)</formula></code></action></actionbar>
+<column sort='ascending' hidedetailrows='false' listseparator='newline' itemname='Keyword'
+ width='10' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
+ sortnocase='true' showaslinks='false'><columnheader title='Keyword'><font
+ size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' listseparator='newline' itemname='Choices'
+ width='20.7500' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
+ sortnocase='true' showaslinks='false'><columnheader title='Choices'><font
+ size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='blank' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='blank'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>""</formula></code></column>
+<column hidedetailrows='false' itemname='$132' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@Text(@DocumentUniqueID)</formula></code></column></view>
+

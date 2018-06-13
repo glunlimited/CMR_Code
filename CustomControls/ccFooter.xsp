@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.layout.ContentPane"></xp:dojoModule>
+
+		<xp:styleSheet href="/ccFooter.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:div dojoType="dijit.layout.ContentPane">
+		<xp:this.dojoAttributes>
+			<xp:dojoAttribute name="href">
+				<xp:this.value><![CDATA[#{javascript:compositeData.pathToDatabase + compositeData.footerService + 
+'&relLkup=' + compositeData.releaseNote + 
+'&target=' + compositeData.linkTarget + 
+'&xpage=' + compositeData.targetXPage + 
+((compositeData.branding) ? ('&brand=' + compositeData.branding) : '') + 
+((compositeData.appendToUrl) ? ('&ext%3D' + compositeData.appendToUrl) : '');
+}]]></xp:this.value>
+			</xp:dojoAttribute>
+		</xp:this.dojoAttributes>
+	</xp:div>
+</xp:view>

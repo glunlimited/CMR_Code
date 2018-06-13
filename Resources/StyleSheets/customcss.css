@@ -1,0 +1,271 @@
+.tundra{
+	background-color: rgb(66,66,66);
+}
+
+.divApplicationContainer{
+	width: 100%; 
+	height: 100%; 
+	padding-top: 0px; 
+	padding-right: 0px; 
+	padding-bottom: 0px; 
+	padding-left: 0px;
+}
+.divBannerContainer{	
+	padding-top: 0px; 
+	padding-right: 0px; 
+	padding-bottom: 0px; 
+	padding-left: 0px;
+	
+}
+.divBannerContainerContent{
+	background-color: rgb(00,00,00); 
+	/* background-size: 100% 100%; */
+	background-image: url("CMPS_big.jpg");	 
+	background-position: left;
+	background-repeat: no-repeat;
+	height:70px;	
+/*	overflow:hidden; */
+}
+
+.divBannerContainerMenu{
+ 	background-color: rgb(00,00,00); 
+	padding-top: 0px; 
+	padding-right: 0px; 
+	padding-bottom: 0px; 
+	padding-left: 0px;
+	color:rgb(255,255,255);
+	
+	height:30px
+}
+
+.divFooterContainer{
+	height: 65px !important;
+    width: 100% !important;
+}
+
+.tableBannerMenu{
+	width:100%;	
+}
+
+.divLeftMenuContainer{
+	
+}
+
+.divLeftMenuContainerMain{
+	
+}
+
+.divLeftMenuContainerAdmin{
+	
+}
+.navRow {
+	background-color: gray;
+   
+}
+
+.navRow:hover {
+	background-color: blue;
+	cursor:pointer
+}
+
+.navRow td{
+	 padding: 5px;
+}
+
+.navLink{
+	  color: white;
+	  font-weight: bold;
+	  text-decoration: none;
+}
+
+a.navLink:active {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.navLink:hover {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.divContentContainer{
+	width: 100%; 
+	height: 100%; 
+	padding-top: 0px; 
+	padding-right: 0px; 
+	padding-bottom: 0px; 
+	padding-left: 0px;
+}
+
+.divContainerDocuments{
+	overflow: auto;
+}
+.BannerMenuText{
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	color: rgb(255,255,255);
+	font-size: 12pt
+}
+
+.xspButtonCommand{
+	background-color: gray;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-size: 9pt;
+	font-weight: bold;
+	color:rgb(255,255,255) !important;
+	
+}
+
+.xspButtonCommand:hover {
+	background-color: blue;
+	cursor: pointer;
+}
+
+.actionbutton{
+	background-color: gray;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-size: 9pt;
+	font-weight: bold;
+	color:rgb(255,255,255) !important;
+}
+	
+.actionbutton:hover {
+	background-color: blue;
+	cursor: pointer;
+}	
+/*
+textarea.fldResultStatement{
+	height:162px; 
+	width:100%; 
+	overflow-y:scroll; 
+	display:block;
+}
+
+tr.rowEven {
+	
+	background:#663366;
+}
+
+tr.rowEven tr.rowOdd:hover {
+	background:#FF6633;
+}
+tr.rowOdd {
+	background:#CCCCCC;
+}
+*/
+tr.CMPHeaderBackground{
+	/*
+	background-image: url("CMPS.jpg");	 
+	background-position: right;
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	height:69px
+	*/
+}
+
+
+.dpTable {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: #505050;
+    background-color: #ece9d8;
+    border: 1px solid #AAAAAA;
+    width:250px
+    }
+.dpTD {
+    border: 1px solid #ece9d8;
+    }
+.dpDayHighlightTD {
+    background-color: #CCCCCC;
+    border: 1px solid #AAAAAA;
+    }
+
+.dpTDHover {
+    background-color: #aca998;
+    border: 1px solid #888888;
+    cursor: pointer;
+    color: red;
+    }
+.dpDayTD {
+    background-color: #CCCCCC;
+    border: 1px solid #AAAAAA;
+    font-weight:bold;
+    }
+.dpTitleText {
+    font-size: 12px;
+    font-weight: bold;
+    color: 4060ff;
+    font-weight: bold;
+    }
+.dpDayHighlight {
+    color: 4060ff;
+    font-weight: bold;
+    }
+.selectorButton
+{
+    width:20px;
+    height:100%px;
+    float:left;
+    cursor: pointer;
+}
+
+.indent0 { 
+padding-left:0px; 
+} 
+.indent1 { 
+padding-left:5px; 
+} 
+.indent2 { 
+padding-left:10px; 
+} 
+.indent3 { 
+padding-left:15px; 
+} 
+.indent4 { 
+padding-left:20px; 
+} 
+.indent5 { 
+padding-left:25px; 
+}
+/* `Validation Errors
+----------------------------------------------------------------------------------------------------
+*/
+
+.mandatoryfld {
+	background-color:#FBFBE2;
+}
+
+.notValid {
+	color:red !important;
+}
+
+.fld_mandatory_info {
+	text-align:center;
+	border:1px solid #DDDFE3;
+	background-color:#FBFBE2;
+	padding:2px;
+	font-style:italic;
+	font-size:10px;
+	margin:2px 0px 2px 0px;
+}
+.validationFailed {
+	font-weight:bold;
+	color:#fff;
+	background-color:red;
+}
+.ValidationErrors table {
+    background-color: #FFFABC;
+    border-collapse: collapse;	
+}
+.ValidationErrors table td {
+    border: 1px solid #F1D665;
+    border-collapse: collapse;
+    padding: 2px;	
+}

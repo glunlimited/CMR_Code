@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='Courts-Martial Results\All Approved' alias='(Approved)' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.0' replicaid='85258288000D10AA' showinmenu='false'
+ publicaccess='false' designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened'
+ onrefresh='displayindicator' headers='beveled' opencollapsed='false' showresponsehierarchy='true'
+ showmargin='true' shrinkrows='false' extendlastcolumn='false' showhierarchies='false'
+ unreadcolor='black' rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white'
+ totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
+ allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
+ marginwidth='0px' marginbgcolor='white' uniquekeys='false'>
+<noteinfo noteid='27e' unid='32B7187B4513C6DE85257D330036E7BA' sequence='24'>
+<created><datetime dst='true'>20140813T055942,66-04</datetime></created>
+<modified><datetime dst='true'>20180508T222245,31-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140134,72-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222245,31-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222245,31-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby><code
+ event='selection'><formula>SELECT Form = "CMResults" &amp; Status = "Approved"</formula></code>
+<column sort='descending' hidedetailrows='false' itemname='Year' width='3.5000'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='Year'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@If(dtPunishmentImposed ="";"Not Found";@Text(@Year(@TextToTime(dtPunishmentImposed))))</formula></code></column>
+<column sort='descending' hidedetailrows='false' itemname='MonthNumber' width='2.2500'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' hidden='true'><columnheader title='MonthNumber'><font
+ size='9pt' style='bold'/></columnheader><code event='value'><formula>@If(dtPunishmentImposed = "";13;@Month(@TextToTime(dtPunishmentImposed)))</formula></code></column>
+<column sort='descending' hidedetailrows='false' itemname='Month' width='3.8750'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' categorized='true' twisties='true'><columnheader title='Month'><font
+ size='9pt' style='bold'/></columnheader><code event='value'><formula>index := @If(dtPunishmentImposed = "";13;@Month(@TextToTime(dtPunishmentImposed)));
+months :=@Implode("January": "February": "March": "April":"May": "June": "July": "August": "September":"October": "November": "December":"Not Found";",");
+@Word(months;",";index)</formula></code></column>
+<column sort='ascending' hidedetailrows='false' itemname='$7' width='1' resizable='true'
+ separatemultiplevalues='true' sortnoaccent='false' sortnocase='true' showaslinks='false'
+ hidden='true'><columnheader><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@If((Region = "Not Found" |  Region=""); "000";Region)</formula></code></column>
+<column sort='ascending' hidedetailrows='false' itemname='$6' width='1' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'
+ hidden='true'><columnheader><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@If(dtPunishmentImposed = "";0;@Day(@TextToTime(dtPunishmentImposed)))</formula></code></column>
+<column hidedetailrows='false' itemname='PunishmentDate' width='12.6250' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Date of Punishment'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@If(dtPunishmentImposed = "";"Not Found";@Text(@TextToTime(dtPunishmentImposed);"D0S0"))</formula></code></column>
+<column sort='ascending' hidedetailrows='false' itemname='Region' width='10'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><columnheader title='Region'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='CourtsMartialType' width='15.1250'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><columnheader title='CourtsMartialType'><font size='9pt'
+ style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='Rank' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Rank'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='FirstName' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='FirstName'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='LastName' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='LastName'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='ResultStatement' width='28.7500'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><columnheader title='ResultStatement'><font size='9pt'
+ style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='City' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='City'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='State' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='State'><font size='9pt' style='bold'/></columnheader></column></view>
+

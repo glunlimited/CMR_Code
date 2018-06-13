@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" dojoParseOnLoad="true"
+	dojoTheme="true">
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.layout.BorderContainer"></xp:dojoModule>
+		<xp:dojoModule name="dijit.layout.TabContainer"></xp:dojoModule>
+		<xp:dojoModule name="dijit.layout.AccordionContainer"></xp:dojoModule>
+		<xp:dojoModule name="dijit.layout.ContentPane"></xp:dojoModule>
+		<xp:dojoModule name="dijit.layout.AccordionPane"></xp:dojoModule>		
+	</xp:this.resources>
+	<xp:panel id="idApplicationContainer" styleClass="divApplicationContainer" dojoType="dijit.layout.BorderContainer">
+		<xp:panel dojoType="dijit.layout.ContentPane"
+			id="idBannerContainer" styleClass="divBannerContainer">
+			<xp:this.attrs>
+				<xp:attr name="region" value="top"></xp:attr>
+			</xp:this.attrs>
+			<xp:callback facetName="facetBanner" id="callbackBanner"></xp:callback>
+		</xp:panel>
+		<xp:panel id="idFullContentContainer">
+			<xp:panel dojoType="dijit.layout.AccordionContainer"
+				id="idLeftMenuContainer" styleClass="divLeftMenuContainer">
+				<xp:this.attrs>
+					<xp:attr name="region" value="leading"></xp:attr>
+				</xp:this.attrs>
+				<xp:panel dojoType="dijit.layout.AccordionPane"
+					title="Main Navigation" id="idLeftMenuContainerMain"
+					styleClass="divLeftMenuContainerMain">
+					<xp:callback facetName="facetMainMenu"
+						id="callbackMainMenu">
+					</xp:callback>
+				</xp:panel>
+				<xp:panel dojoType="dijit.layout.AccordionPane"
+					title="Administration" id="idLeftMenuContainerAdmin"
+					styleClass="divLeftMenuContainerAdmin">
+					<xp:callback facetName="facetAdminMenu"
+						id="callbackAdminMenu">
+					</xp:callback>
+				</xp:panel>
+			</xp:panel>
+			<xp:panel dojoType="dijit.layout.ContentPane"
+				id="idContentContainer" styleClass="divContentContainer">
+				<xp:this.attrs>
+					<xp:attr name="region" value="center"></xp:attr>
+				</xp:this.attrs>
+
+				
+				<xp:callback facetName="facetContentContainer"
+					id="callbackContentContainer">
+				</xp:callback>
+			</xp:panel>
+
+			<xp:panel dojoType="dijit.layout.ContentPane"
+				styleClass="divContainerDocuments">
+
+				<xp:this.attrs>
+					<xp:attr name="region" value="trailing"></xp:attr>
+					<xp:attr name="splitter" value="true"></xp:attr>
+				</xp:this.attrs>
+				<xp:callback facetName="facetResultDocument"
+					id="callbackResultDocument">
+				</xp:callback>
+			</xp:panel>
+		</xp:panel>
+		<xp:panel dojoType="dijit.layout.ContentPane"
+			id="idFooterContainer" styleClass="divFooterContainer">		
+			<xp:this.attrs>
+				<xp:attr name="region" value="bottom"></xp:attr>
+			</xp:this.attrs>
+			<xp:callback facetName="facetFooter" id="callbackFooter"></xp:callback>
+		</xp:panel>
+	</xp:panel>
+</xp:view>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+
+	<xp:this.resources>
+		<xp:script src="/CommonSSJSUtils.jss" clientSide="false"></xp:script>
+		<xp:styleSheet href="/customcss.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:panel id="divResultDocumentViewer" style="width:375px">
+		<xp:panel id="divResultDocument" styleClass="ResultDocument">
+
+			<xp:this.data>
+				<xp:dominoDocument var="document1" formName="CMResults"
+					action="openDocument" computeWithForm="onsave">
+					<xp:this.documentId><![CDATA[#{javascript:viewScope.get("ResultUnid")}]]></xp:this.documentId>
+				</xp:dominoDocument>
+			</xp:this.data>
+
+			<xp:this.rendered><![CDATA[#{javascript:if(!!viewScope.get("ResultUnid")){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+			<xp:table style="width:auto">
+				<xp:tr>
+					<xp:td>
+
+						<xp:text escape="true" id="fld_ErrorText"
+							styleClass="ErrorText"
+							style="color:rgb(255,0,0);font-weight:bold"
+							value="#{requestScope.ErrorText}" rendered="false">
+						</xp:text>
+						<xc:ccMandatoryFldInfo
+							showInfoMandatory="true">
+						</xc:ccMandatoryFldInfo>
+					</xp:td>
+
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+
+						<xp:label id="label1" style="font-size:16pt">
+							<xp:this.value><![CDATA[#{javascript:var accussedname ="";
+if(document1.getItemValueString("MiddleInitial") != ""){
+	accussedname = document1.getItemValueString("FirstName")+" " + document1.getItemValueString("MiddleInitial") + " " + document1.getItemValueString("LastName");
+}else{
+	accussedname = document1.getItemValueString("FirstName")+" " + document1.getItemValueString("LastName");
+}
+
+return "US vs " + accussedname;}]]></xp:this.value>
+						</xp:label>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label value="Status:  " id="label7"
+							style="font-weight:bold">
+						</xp:label>
+						<xp:text escape="true" id="computedField1"
+							value="#{document1.Status}">
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label value="Region:  " id="lbl_Region"
+							style="font-weight:bold" for="fld_Region">
+						</xp:label>
+						<xp:comboBox id="fld_Region"
+							value="#{document1.Region}">
+
+							<xp:this.rendered><![CDATA[#{javascript:(currentDocument.isEditable() && ((currentDocument.getItemValueString("Region") === "") ||(currentDocument.getItemValueString("Region")=== "Not Found")))}]]></xp:this.rendered>
+
+
+							<xp:selectItem
+								itemLabel="Select Judicial Circut" itemValue='Not Found'
+								id="selectItem6">
+							</xp:selectItem>
+
+							<xp:selectItem
+								itemLabel="1st Judicial Circuit"
+								itemValue="1st Judicial Circuit" id="selectItem1">
+							</xp:selectItem>
+							<xp:selectItem
+								itemLabel="2nd Judicial Circuit"
+								itemValue="2nd Judicial Circuit" id="selectItem2">
+							</xp:selectItem>
+							<xp:selectItem
+								itemLabel="3rd Judicial Circuit"
+								itemValue="3rd Judicial Circuit" id="selectItem3">
+							</xp:selectItem>
+							<xp:selectItem
+								itemLabel="4th Judicial Circuit"
+								itemValue="4th Judicial Circuit" id="selectItem4">
+							</xp:selectItem>
+							<xp:selectItem
+								itemLabel="5th Judicial Circuit"
+								itemValue="5th Judicial Circuit" id="selectItem5">
+							</xp:selectItem>
+
+
+						</xp:comboBox>
+						<xp:text escape="true" id="computedField2"
+							value="#{document1.Region}">
+							<xp:this.rendered><![CDATA[#{javascript:(!currentDocument.isEditable() || ((currentDocument.getItemValueString("Region") !== "") &&(currentDocument.getItemValueString("Region") !== "Not Found")))}]]></xp:this.rendered>
+						</xp:text>
+					</xp:td>
+
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label value="Court-Martial Type:  "
+							id="label4" style="font-weight:bold">
+						</xp:label>
+						<xp:text escape="true" id="computedField3"
+							value="#{document1.CourtsMartialType}">
+						</xp:text>
+					</xp:td>
+
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label value="Accused Name:  " id="label3"
+							style="font-weight:bold">
+						</xp:label>
+						<xp:text escape="true" id="computedField4">
+							<xp:this.value><![CDATA[#{javascript:var accussedname ="";
+if(document1.getItemValueString("MiddleInitial") != ""){
+	accussedname = document1.getItemValueString("FirstName")+" " + document1.getItemValueString("MiddleInitial") + " " + document1.getItemValueString("LastName");
+}else{
+	accussedname = document1.getItemValueString("FirstName")+" " + document1.getItemValueString("LastName");
+}
+
+return accussedname;}]]></xp:this.value>
+						</xp:text>
+					</xp:td>
+
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label id="lbl_PunishmentImposed"
+							value="Date of Punishment:  " style="font-weight:bold"
+							for="fld_PunishmentImposed">
+						</xp:label>
+						<xp:inputText id="fld_PunishmentImposed"
+							value="#{document1.dtPunishmentImposed}" type="text"
+							styleClass="datePickNoInput" style="ReadOnly">
+							<xp:this.rendered><![CDATA[#{javascript:(currentDocument.isEditable() && currentDocument.getItemValueString("dtPunishmentImposed")=== "")}]]></xp:this.rendered>
+							<xp:this.converter>
+								<xp:convertDateTime
+									pattern="MM/dd/yyyy">
+								</xp:convertDateTime>
+							</xp:this.converter>
+
+
+							<xp:dateTimeHelper></xp:dateTimeHelper>
+						</xp:inputText>
+
+						<xp:text escape="true" id="computedField6">
+							<xp:this.value><![CDATA[#{javascript:if(document1.getItemValueString("dtPunishmentImposed").equals("")){
+	return "Not Found";
+}else{
+	var ndtPunishmentImposed:NotesDateTime = session.createDateTime(document1.getItemValueString("dtPunishmentImposed"));
+	return ndtPunishmentImposed.getDateOnly();
+//@Text(@TextToTime(document1.getItemValueString("dtPunishmentImposed")),"D0S0")
+}
+
+}]]></xp:this.value>
+							<xp:this.converter>
+								<xp:convertDateTime type="date">
+								</xp:convertDateTime>
+							</xp:this.converter>
+							<xp:this.rendered><![CDATA[#{javascript:!currentDocument.isEditable() || (currentDocument.isEditable() && !(currentDocument.getItemValueString("dtPunishmentImposed") ===  ""))}]]></xp:this.rendered>
+						</xp:text>
+					</xp:td>
+
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label id="label9"
+							value="Go to Case Record:  " style="font-weight:bold">
+						</xp:label>
+						&#160;
+						<xp:link escape="true" text="Link to Case"
+							id="link1" style="font-weight:bold">
+							<xp:this.rendered><![CDATA[#{javascript:if((document1.getDocument().getItemValueString("MatterDbReplicaId").equals("")) || (document1.getDocument().getItemValueString("MatterDbReplicaId").equals(""))){
+	return false;
+}else{
+	return true;
+}}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" refreshId="link1">
+
+								<xp:this.action><![CDATA[#{javascript:var host:string = context.getUrl().toString().split(facesContext.getExternalContext().getRequest().getRequestURI())[0];
+var replicaid:string = document1.getDocument().getItemValueString("MatterDbReplicaId");
+var mtrdocunid:string = document1.getDocument().getItemValueString("MatterDocumentUnid");
+var urlCase:string = host + "/" + replicaid + "/0/" + mtrdocunid + "?OpenDocument";
+view.postScript("window.open('" + urlCase + "')");}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:text escape="true" id="computedField7">
+							<xp:this.value><![CDATA[#{javascript:return "Link Unavailable";}]]></xp:this.value>
+							<xp:this.rendered><![CDATA[#{javascript:if((document1.getDocument().getItemValueString("MatterDbReplicaId").equals("")) || (document1.getDocument().getItemValueString("MatterDbReplicaId").equals(""))){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>&#160;</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label value="Result Statement:" id="label6"
+							style="font-weight:bold">
+						</xp:label>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:inputTextarea id="inputTextResultStatement"
+							value="#{document1.ResultStatement}"
+							rendered="#{javascript:currentDocument.isEditable()}"
+							styleClass="fldResultStatement"
+							style="height:250.0px; width:100%; overflow-y:scroll; display:block">
+						</xp:inputTextarea>
+						<xp:div id="divDisplayResultStatement"
+							rendered="#{javascript:!currentDocument.isEditable()}">
+							<xp:text escape="true" id="computedField5"
+								value="#{document1.ResultStatement}">
+							</xp:text>
+						</xp:div>
+					</xp:td>
+
+				</xp:tr>
+				<xp:tr>
+					<xp:td>&#160;</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						&#160;
+						<xp:label value="Document Actions:" id="label8"
+							style="font-weight:bold">
+						</xp:label>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+
+						<xp:button value="Approve" id="button2"
+							styleClass="actionbutton">
+							<xp:this.rendered><![CDATA[#{javascript:!document1.isEditable() && (document1.getItemValueString("Status").equals("") || document1.getItemValueString("Status").equals("Pending"))}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial"
+								onComplete="XSP.partialRefreshGet('#{id:idContanerViewControls}');"
+								refreshId="divResultDocumentViewer" id="eventHandler2">
+								<xp:this.action><![CDATA[#{javascript:var valRegion:string = document1.getDocument().getItemValueString("Region");
+var valDatePunishmentImposed:string = document1.getDocument().getItemValueString("dtPunishmentImposed");
+var msgRegion = "Please edit the document and input the Region.";
+var msgDatePunishmentImposed = "Please edit the document and input Date of Punishment.";
+
+if ( valRegion.equals("Not Found")|| valRegion.equals("")){	
+	requestScope.put("ErrorText", msgRegion);	
+}else if(valDatePunishmentImposed.equals("Not Found")|| valDatePunishmentImposed.equals("")){	
+	requestScope.put("ErrorText", msgDatePunishmentImposed);
+}else{
+	document1.getDocument().replaceItemValue("Status", "Approved");	
+	document1.getDocument().save(true,false,true);
+	viewScope.put("ResultUnid", "");
+}
+
+}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Reject" id="button1"
+							styleClass="actionbutton">
+							<xp:this.rendered><![CDATA[#{javascript:!document1.isEditable() && (document1.getItemValueString("Status").equals("") || document1.getItemValueString("Status").equals("Pending"))}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial"
+								refreshId="divResultDocumentViewer"
+								onComplete="XSP.partialRefreshGet('#{id:idContanerViewControls}');"
+								id="eventHandler3">
+								<xp:this.action><![CDATA[#{javascript:document1.getDocument().replaceItemValue("Status", "Rejected");
+document1.getDocument().save(true,false,true);
+viewScope.put("ResultUnid", "");
+}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Edit" id="button3"
+							styleClass="actionbutton">
+							<xp:this.rendered><![CDATA[#{javascript:!currentDocument.isEditable() && (document1.getDocument().getItemValueString("Status").equals("") ||document1.getDocument().getItemValueString("Status").equals("Pending"))}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial"
+								refreshId="divResultDocument" id="eventHandler4">
+								<xp:this.action>
+									<xp:changeDocumentMode mode="edit"
+										var="document1">
+									</xp:changeDocumentMode>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+
+						<xp:button value="Save" id="button6"
+							rendered="#{javascript:currentDocument.isEditable();}"
+							styleClass="actionbutton">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial"
+								refreshId="divResultDocumentViewer"
+								onComplete="XSP.partialRefreshGet('#{id:idContanerViewControls}');"
+								id="eventHandler5">
+								<xp:this.action><![CDATA[#{javascript:/*
+var valRegion:string = document1.getItemValueString("Region");
+var valDatePunishmentImposed:string = document1.getItemValueString("dtPunishmentImposed");
+var msgRegion = "Please input the Region.";
+var msgDatePunishmentImposed = "Please input the Date of Punishment.";
+//var msgDatePunishmentImposedFormat = "Please enter the Date of Punishment in the correct format. eg. MM/DD/YYYY";
+if ( valRegion.equals("Not Found")|| valRegion.equals("")){	
+	requestScope.put("ErrorText", msgRegion);	
+}else if(valDatePunishmentImposed.equals("Not Found")|| valDatePunishmentImposed.equals("")){	
+	requestScope.put("ErrorText", msgDatePunishmentImposed);
+}else{		
+	document1.save();
+	context.setDocumentMode("document1", "readOnly");	
+}
+*/
+//if(document1.save()){
+//context.setDocumentMode("document1", "readOnly");	
+//}
+
+var okToClose = false;
+if(validateForm("validateResultDocument")){
+	okToClose = document1.save();	
+	if(okToClose){
+		context.setDocumentMode("document1", "readOnly");	
+	}
+	
+}}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Close" id="button5"
+							styleClass="actionbutton">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial"
+								refreshId="divResultDocumentViewer" id="eventHandler6">
+								<xp:this.action><![CDATA[#{javascript:viewScope.put("ResultUnid", "");}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+					</xp:td>
+
+				</xp:tr>
+			</xp:table>
+		</xp:panel>
+		<xp:panel id="divPlaceHolderImage" style="text-align:center;">
+			<xp:this.rendered><![CDATA[#{javascript:if(!!viewScope.get("ResultUnid")){
+	return false;
+}else{
+	return true;
+}}]]></xp:this.rendered>
+			<xp:image url="/scalepublish.jpg" id="image1"
+				loaded="true">
+				<xp:this.rendered><![CDATA[#{javascript:if(!!viewScope.get("ResultUnid")){
+	return false;
+}else{
+	return true;
+}}]]></xp:this.rendered>
+			</xp:image>
+		</xp:panel>
+	</xp:panel>
+
+
+</xp:view>

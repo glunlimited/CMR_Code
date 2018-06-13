@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="85258288000D10AA" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="24a" sequence="8" unid="D68BF6D6355C9B5B85257E2F0064CE3A">
+<created><datetime dst="true">20150422T142103,94-04</datetime></created>
+<modified><datetime dst="true">20180508T222245,05-04</datetime></modified>
+<revised><datetime dst="true">20150430T140134,60-04</datetime></revised>
+<lastaccessed><datetime dst="true">20180508T222245,05-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180508T222245,05-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<item name="$POID"><datetime dst="true">20150422T142351,22-04</datetime></item>
+<item name="$TITLE" sign="true"><text>CommonCSJSUtils</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>

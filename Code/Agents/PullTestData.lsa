@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='PullTestData' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='85258288000D10AA' hide='v3' publicaccess='false'
+ designerversion='8.5.3'>
+<noteinfo noteid='13e' unid='64ED753525C9D22B85257CE60065C9A6' sequence='32'>
+<created><datetime dst='true'>20140528T143147,58-04</datetime></created>
+<modified><datetime dst='true'>20180508T222243,87-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140135,04-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222243,87-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222243,87-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<designchange><datetime dst='true'>20150430T140135,98-04</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='runonce'/><code event='options'><lotusscript>%REM
+	Agent PullTestData
+	Created May 28, 2014 by Gregory L Washington/AJ/ARMYJAGC
+	Description: Comments for Agent
+%END REM
+Option Public
+Option Declare
+
+
+</lotusscript></code><code event='initialize'><lotusscript>Sub Initialize
+	
+	Const MHNOTESQUERY = |Form="MatterHeader" &amp; MatterType = "Court Martial"|
+	Const MNOTESQUERY = |Form="MatterHeader" &amp; MatterType = "Court Martial" &amp; MatterStatus = "Closed"|
+	
+	Dim session As New NotesSession
+	Dim dbThis As NotesDatabase
+	Dim dbSPMCA As NotesDatabase
+	Dim dbHome As NotesDatabase
+	Dim vwUnits As NotesView
+	Dim dcMatterHrds As NotesDocumentCollection
+	Dim dcFindings As NotesDocumentCollection
+	Dim dcChildren As NotesDocumentCollection
+	Dim doc As NotesDocument
+	Dim docMatter As NotesDocument
+	Dim docChild As NotesDocument
+	Dim docMatterHdr As NotesDocument
+	Dim docBasicData As NotesDocument
+	Dim docUnit As NotesDocument
+	Dim docFinding As NotesDocument
+	Dim docSentence As NotesDocument
+	Dim computedSearchFormula As String
+	Dim i As Integer
+	Dim j As Integer
+	Dim path As String
+	
+	
+	
+	
+	
+	
+	
+	%Rem
+	Dim spmcafile(16) As String
+	
+	spmcafile(0) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_00966.nsf"
+	spmcafile(1) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_148.nsf"
+	spmcafile(2) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_149.nsf"
+	spmcafile(3) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_150.nsf"
+	spmcafile(4) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_153.nsf"
+	spmcafile(5) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_849.nsf"
+	spmcafile(6) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_709.nsf"
+	spmcafile(7) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_677.nsf"
+	spmcafile(8) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_784.nsf"
+	spmcafile(9) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_155.nsf"
+	spmcafile(10) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_00947.nsf"
+	spmcafile(11) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_156.nsf"
+	spmcafile(12) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_286.nsf"
+	spmcafile(13) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_01004.nsf"
+	spmcafile(14) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_01003.nsf"
+	spmcafile(15) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_00941.nsf"
+	spmcafile(16) = "JAGCNETIntranet\Applications\MJO\eJ_PRD_712.nsf"
+	%end REm
+	
+	Set dbHome = session.Getdatabase("JAGCNet4/SVR/ARMYJAGC", "JAGCNETIntranet\Applications\MJO\eJ000.nsf", False)
+	Set dbThis = session.Currentdatabase
+	Set vwUnits = dbHome.Getview("Administration\Units\SPCMCA by GCMCA")
+	Set docUnit = vwUnits.Getfirstdocument()
+	While Not docUnit Is Nothing
+		path = docUnit.DbPathName(0)
+		If InStr(path,"_GCM_") &gt; 0 Then
+			GoTo GETNEXTUNIT
+		Else
+			Print path
+			Set dbSPMCA = session.Getdatabase("JAGCNet4/SVR/ARMYJAGC", path, False)		
+			Set dcMatterHrds = dbSPMCA.Search(MHNOTESQUERY, Nothing, 0)
+			If dcMatterHrds.Count &lt; 1 Then Exit Sub
+			Set docMatterHdr = dcMatterHrds.Getfirstdocument()
+			While Not(docMatterHdr Is Nothing)
+				Set docMatter =  dbSPMCA.Getdocumentbyunid(docMatterHdr.MATTERDOCUNID(0))
+				Set doc = dbThis.Createdocument()
+				doc.Form = "CMResults"
+				doc.MATTERHEADERUNID = docMatter.MATTERHEADERUNID
+				doc.MatterType = docMatter.MatterType
+				doc.MatterStatus = docMatter.MatterStatus
+				doc.CourtsMartialType = docMatter.CourtsMartialType
+				'Set docMatterHdr = dbSPMCA.Getdocumentbyunid(docMatter.MATTERHEADERUNID(0))
+				computedSearchFormula = |MATTERHEADERUNID = "| + docMatter.MATTERHEADERUNID(0) + |"| 
+				Set dcChildren = dbSPMCA.Search(computedSearchFormula, Nothing, 0)
+				For i = 1 To dcChildren.Count
+					Set docChild = dcChildren.Getnthdocument(i)
+					If docChild.Form(0) = "BasicData" Then
+						doc.Rank = docChild.Rank
+						doc.FirstName = docChild.FirstName
+						doc.MiddleInitial = docChild.MiddleInitial
+						doc.LastName = docChild.LastName
+						doc.MJOUIC_GCMCA = docChild.MJOUIC_GCMCA
+						'Set docUnit = dbHome.Getdocumentbyunid(docChild.MJOUIC_GCMCA(0))
+						'doc.City = docUnit.City
+						'doc.State = docUnit.State				
+					ElseIf docChild.Form(0) = "cmFindings" Then
+						doc.ArticleDescription = docChild.ArticleDescription
+						doc.CHARGEFINDING = docChild.CHARGEFINDING
+					ElseIf docChild.Form(0) = "cmSentence" Then
+						doc.dtPunishmentImposed = docChild.dtPunishmentImposed
+						doc.LangOfPunishment = docChild.LangOfPunishment				
+					End If			
+				Next
+				
+				Call doc.Save(True, False, True)
+				
+				Set docMatterHdr = dcMatterHrds.Getnextdocument(docMatterHdr)
+				
+			Wend
+		End If
+GETNEXTUNIT:
+		Set docUnit = vwUnits.Getnextdocument(docUnit)
+	Wend
+	
+	
+	
+	'For j = 0 To UBound(spmcafile)		
+		
+	'Next	
+	
+End Sub</lotusscript></code>
+<rundata processeddocs='0' exitcode='0' agentdata='D9D5F329E4C96AEF85257CE7006F715B'>
+<agentmodified><datetime dst='true'>20140529T161654,75-04</datetime></agentmodified>
+<agentrun><datetime dst='true'>20140529T163405,70-04</datetime></agentrun>
+<runlog>Started running agent 'PullTestData' on 05/29/2014 04:33:59 PM
+Ran LotusScript code
+Done running agent 'PullTestData' on 05/29/2014 04:34:05 PM
+</runlog></rundata></agent>
+

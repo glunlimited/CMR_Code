@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="85258288000D10AA" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2e6" sequence="49" unid="321D15F49F4FF71E85257D33006BDC39">
+<created><datetime dst="true">20140813T153807,29-04</datetime></created>
+<modified><datetime dst="true">20180508T222245,73-04</datetime></modified>
+<revised><datetime dst="true">20150430T140134,26-04</datetime></revised>
+<lastaccessed><datetime dst="true">20180508T222245,73-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180508T222245,73-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE"><text>ccLeftNavMain.xsp</text></item>
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>ccLeftNavMain.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+</note>

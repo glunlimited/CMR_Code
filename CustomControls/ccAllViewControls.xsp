@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:panel id="idContanerViewControls" style="width:100.0%;height:auto">
+	
+		<xc:ccViewPendingApproval>
+			<xc:this.rendered><![CDATA[#{javascript:viewScope.viewControl === "ccViewPendingApproval"}]]></xc:this.rendered>
+		</xc:ccViewPendingApproval>
+		<xc:ccViewPublished>
+			<xc:this.rendered><![CDATA[#{javascript:viewScope.viewControl === "ccViewPublished"}]]></xc:this.rendered>
+		</xc:ccViewPublished>
+		<xc:ccViewPublishedFiles>
+			<xc:this.rendered><![CDATA[#{javascript:viewScope.viewControl === "ccViewPublishedFiles"}]]></xc:this.rendered>
+		</xc:ccViewPublishedFiles>
+		<xc:ccViewResults>
+			<xc:this.rendered><![CDATA[#{javascript:viewScope.viewControl === "ccViewResults"}]]></xc:this.rendered>
+		</xc:ccViewResults>
+		<xc:ccViewApproved>
+			<xc:this.rendered><![CDATA[#{javascript:viewScope.viewControl === "ccViewApproved"}]]></xc:this.rendered>
+		</xc:ccViewApproved>
+		<xc:ccViewRejected>
+			<xc:this.rendered><![CDATA[#{javascript:viewScope.viewControl === "ccViewRejected"}]]></xc:this.rendered>
+		</xc:ccViewRejected>
+		<xc:ccWhoAmI>
+			<xc:this.rendered><![CDATA[#{javascript:viewScope.viewControl === "ccWhoAmI"}]]></xc:this.rendered>
+		</xc:ccWhoAmI>
+		</xp:panel>
+
+</xp:view>

@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='CMResults' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='85258288000D10AA' nocompose='true' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='162' unid='406CAD0E314240ED85257CE60049C608' sequence='23'>
+<created><datetime dst='true'>20140528T092548,24-04</datetime></created>
+<modified><datetime dst='true'>20180508T222244,05-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140134,58-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222244,05-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222244,05-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby><code
+ event='windowtitle'><formula>"Courts-Martial Results"</formula></code>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<par def='1'/>
+<table widthtype='fixedleft' refwidth='7.0542in'><tablecolumn width='1.6292in'/><tablecolumn
+ width='2.7125in'/><tablecolumn width='2.7125in'/>
+<tablerow>
+<tablecell>
+<pardef id='3' keepwithnext='true' keeptogether='true'/>
+<par def='3'>Field Name</par></tablecell>
+<tablecell>
+<pardef id='4' keepwithnext='true' keeptogether='true'/>
+<par def='4'/></tablecell>
+<tablecell>
+<pardef id='5' keepwithnext='true' keeptogether='true'/>
+<par def='5'>Data Source Document</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='6' keepwithnext='true' keeptogether='true'/>
+<par def='6'>Status</par></tablecell>
+<tablecell>
+<pardef id='7' keepwithnext='true' keeptogether='true'/>
+<par def='7'><field type='text' kind='editable' name='Status'><code event='defaultvalue'><formula
+>Status</formula></code></field><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='7' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>Computed</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='8' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'/>
+<par def='8'>MATTERHEADERUNID</par></tablecell>
+<tablecell>
+<par def='7'><field type='text' kind='editable' name='MATTERHEADERUNID'><code
+ event='defaultvalue'><formula>MATTERHEADERUNID</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>BasicData</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>MatterDbReplicaId</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='MatterDbReplicaId'><code
+ event='defaultvalue'><formula>MatterDbReplicaId</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>Computed</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>MatterDocumentUnid</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='MatterDocumentUnid'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>Matter</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'>Rank</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Rank'><code event='defaultvalue'><formula
+>Rank</formula></code></field><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>BasicData</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>FirstName</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='FirstName'><code event='defaultvalue'><formula
+>FirstName</formula></code></field><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>BasicData</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'>MiddleInitial</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='MiddleInitial'><code
+ event='defaultvalue'><formula>MiddleInitial</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>BasicData</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'>LastName</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='LastName'><code event='defaultvalue'><formula
+>LastName</formula></code></field><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>BasicData</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'/></tablecell>
+<tablecell>
+<par def='4'/></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Region</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Region'><code event='defaultvalue'><formula
+>Region</formula></code></field><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>eDocket Database</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>City</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='City'><code event='defaultvalue'><formula
+>City</formula></code></field><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>Unit</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>State</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='State'><code event='defaultvalue'><formula
+>State</formula></code></field><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>Unit</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'/></tablecell>
+<tablecell>
+<par def='4'/></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'>CourtsMartialType</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='CourtsMartialType'><code
+ event='defaultvalue'><formula>CourtsMartialType</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>Matter</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'>CourtsMartialFullName</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='CourtsMartialFullName'><code
+ event='defaultvalue'><formula>CourtsMartialFullName</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<pardef id='9' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'/>
+<par def='9'>Computed</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'/></tablecell>
+<tablecell>
+<par def='4'/></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'>dtPunishmentImposed</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='dtPunishmentImposed'><code
+ event='defaultvalue'><formula>dtPunishmentImposed</formula></code><code event='inputtranslation'><formula
+>@Text(dtPunishmentImposed;"D0S0")</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>cmSentence</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'>LangOfPunishment</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='LangOfPunishment'><code
+ event='defaultvalue'><formula>LangOfPunishment</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>cmSentence</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>ResultStatement</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='ResultStatement'><code
+ event='defaultvalue'><formula>ResultStatement</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>Computed</par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>PublishedBy</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='PublishedBy'><code event='defaultvalue'><formula
+>PublishedBy</formula></code></field><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'>@User when Published</par></tablecell></tablerow></table>
+<par def='1'/></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>CMResults</text></item></form>
+

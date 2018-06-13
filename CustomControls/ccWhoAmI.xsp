@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:table styleClass="TableRows" style="width:803.0px">
+		<xp:tr>
+			<xp:td><xp:label id="label4" value="My User Name :" style="font-weight:bold">
+				</xp:label></xp:td>
+			<xp:td>
+				<xp:text escape="true" id="computedField2"><xp:this.value><![CDATA[#{javascript:return @Name("[CN]",session.getEffectiveUserName());
+}]]></xp:this.value></xp:text></xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:br></xp:br>
+				<xp:br></xp:br></xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label id="label3" value="My Access Level :"
+					style="font-weight:bold">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:text escape="true" id="computedField1">
+					<xp:this.value><![CDATA[#{javascript:function convertAccessLevel() {
+switch (database.getCurrentAccessLevel()){
+	case NotesACL.LEVEL_DEPOSITOR : return "depositor";
+	case NotesACL.LEVEL_READER : return "reader";
+	case NotesACL.LEVEL_AUTHOR : return "author";
+	case NotesACL.LEVEL_EDITOR : return "editor";
+	case NotesACL.LEVEL_DESIGNER : return "designer";
+	case NotesACL.LEVEL_MANAGER : return "manager";
+	}
+	}
+return "Your access level for this database is " + convertAccessLevel() + "."
+
+}]]></xp:this.value>
+				</xp:text>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:br id="br3"></xp:br>
+				<xp:br id="br4"></xp:br>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td style="width:256.0px">
+				<xp:label id="label1" style="font-weight:bold">
+				<xp:this.value><![CDATA[#{javascript:return "My " + @DbTitle() + " Role(s) :";}]]></xp:this.value></xp:label>
+			</xp:td>
+			<xp:td style="width:535.0px">
+
+				<xp:inputTextarea id="inputTextarea1">
+					<xp:this.value><![CDATA[#{javascript:var roles = session.evaluate("@UserRoles");
+@Implode(roles,@NewLine())}]]></xp:this.value>
+				</xp:inputTextarea>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td style="width:256.0px"></xp:td>
+			<xp:td style="width:535.0px">
+				<xp:br id="br1"></xp:br>
+				<xp:br id="br2"></xp:br>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td style="width:256.0px">
+				<xp:label value="My Group(s) in Address Book :"
+					id="label2" style="font-weight:bold">
+				</xp:label>
+			</xp:td>
+			<xp:td style="width:535.0px">
+
+				<xp:inputTextarea id="inputTextarea2"
+					styleClass="fields">
+					<xp:this.value><![CDATA[#{javascript:var groups = session.getUserGroupNameList();
+@Implode(groups,@NewLine())}]]></xp:this.value>
+				</xp:inputTextarea>
+			</xp:td>
+		</xp:tr>
+
+	</xp:table>
+
+
+</xp:view>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xc_1="component/XPages.nsf">
+
+	
+	<xc:ccApplicationLayout><xp:this.facets>
+	<xc:ccFooter footerService="/get.xsp/footer?lkup=footer"
+		releaseNote="CMPReleaseNotes" linkTarget="_top"
+		targetXPage="xpHelpViewer.xsp" xp:key="facetFooter">
+		<xc:this.pathToDatabase><![CDATA[#{javascript:return @DbLookup(@DbName(), "vwKeywords", "SitesHelpDbPath", "Choices");}]]></xc:this.pathToDatabase>
+	</xc:ccFooter>
+	<xc:ccHelpViewer pageService="/xpHelp.xsp?helpkey="
+		xp:key="facetContentContainer">
+		<xc:this.pathToDatabase><![CDATA[#{javascript:return @DbLookup(@DbName(), "vwKeywords", "SitesHelpDbPath", "Choices");}]]></xc:this.pathToDatabase>
+	</xc:ccHelpViewer>
+	<xc:ccLeftNavAdmin xp:key="facetAdminMenu"></xc:ccLeftNavAdmin>
+	<xc:ccLeftNavMain xp:key="facetMainMenu"></xc:ccLeftNavMain>
+	<xc:ccHeader xp:key="facetBanner"></xc:ccHeader></xp:this.facets></xc:ccApplicationLayout></xp:view>

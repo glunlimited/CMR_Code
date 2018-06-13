@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='Set As Approved' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='85258288000D10AA' hide='v3' publicaccess='false'
+ designerversion='8.5.3'>
+<noteinfo noteid='22e' unid='72894006F9EC1C3485257E0B0071FD65' sequence='6'>
+<created><datetime dst='true'>20150317T164504,37-04</datetime></created>
+<modified><datetime dst='true'>20180508T222244,95-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140135,10-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222244,95-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222244,95-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<designchange><datetime dst='true'>20150430T140136,01-04</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='selected'/><code event='action'><formula>FIELD Status := "Approved";
+SELECT @All</formula></code>
+<rundata processeddocs='43' exitcode='0'>
+<agentmodified><datetime dst='true'>20150317T164610,61-04</datetime></agentmodified>
+<agentrun><datetime dst='true'>20150422T112150,78-04</datetime></agentrun>
+<runlog>Started running agent 'Set As Approved' on 04/22/2015 11:21:50 AM
+Running on selected documents: 43 total
+Found 43 document(s) that match search criteria
+43 document(s) were modified by formula
+Done running agent 'Set As Approved' on 04/22/2015 11:21:50 AM
+</runlog></rundata>
+<item name='$POID'><datetime dst='true'>20150317T164610,59-04</datetime></item></agent>
+

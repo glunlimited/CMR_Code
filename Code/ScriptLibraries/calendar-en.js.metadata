@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="85258288000D10AA" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="25e" sequence="5" unid="614DF1C41BBC781985257E22005CB177">
+<created><datetime dst="true">20150409T125227,43-04</datetime></created>
+<modified><datetime dst="true">20180508T222245,15-04</datetime></modified>
+<revised><datetime dst="true">20150430T140134,02-04</datetime></revised>
+<lastaccessed><datetime dst="true">20180508T222245,15-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180508T222245,15-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Mark W Bohler/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Baiju Thomas/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWSD/OU=SVR/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=James R Hughes/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS DEVADMIN/O=ARMYJAGCDEV</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name>CN=LAAWS XXI/OU=AJ/O=ARMYJAGC</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<item name="$TITLE" sign="true"><text>calendar-en.js</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+
+<item name="$POID"><datetime dst="true">20150409T125230,40-04</datetime></item></note>

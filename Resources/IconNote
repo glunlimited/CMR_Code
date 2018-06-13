@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='85258288000D10AA'>
+<noteinfo noteid='11a' unid='F48466333C52953185257CE60049B6CE' sequence='3'>
+<created><datetime dst='true'>20140528T092509,26-04</datetime></created>
+<modified><datetime dst='true'>20180508T222246,95-04</datetime></modified>
+<revised><datetime dst='true'>20180508T222246,94-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222246,95-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222243,71-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Rajeev R Menon/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name></updatedby>
+<item name='IconBitmap' summary='true'>
+<rawitemdata type='6'>
+AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
+AYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAHAAAADwAAAA8AAAAPgAAAH4AAAB/AAAA/4AAAf
+/AAAP/4AAH//gAH///AP//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiAAAAAAAAAAAAAAI
+jPZmZm/IgAAAAAAAAAAIjGZmZmZmZsiAAAAAAAAAjGZmZmZmZmZmyAAAAAAACMZmZmZmZmZmZmyA
+AAAAAIxmZmZmZmZmZmZmyAAAAAjGZmZmZmZmZmZmZmyAAAAIZmbyL2byL2byL2ZmgAAAjGZmIiJm
+IiJmIiJmZsgAAIZmZiIiZiIiZiIiZmZoAADGZmYiImYiImYiImZmbAAI9mZmIiJmIiJmIiJmZm+A
+CGZmZiIiZiIiZiIiZmZmgAhmZmYiImYiImYiImZmZoAIZmZmIiJmIiJmIiJmZmaACGZvIiIiZiIi
+ZiIiIvZmgAhmYiIiImYiImYiIiImZoAIZm8iIi9m8i9m8iIi9maACPZmZmZmZmZmZmZmZmZvgADG
+ZmbyL2byL2byL2ZmbAAAj2ZmIiJmIiJmIiJmZvgAAIxmZiIiZiIiZiIiZmbIAAAI9mbyL2byL2by
+L2ZvgAAACMZmZmZmZmZmZmZmbIAAAACMZmZmZmZmZmZmZsgAAAAACMZmZmZmZmZmZmyAAAAAAACM
+9mZmZmZmZm/IAAAAAAAACIz2ZmZmZm/IgAAAAAAAAAAIiMZmZmyIgAAAAAAAAAAAAACIiIiIAAAA
+AAAAUEECICABAAD/////+A4DgA==
+</rawitemdata></item>
+<item name='$TemplateServerName'><text>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</text></item>
+<item name='$TemplateFileName'><text>CN=DEV1/OU=SVR/O=ARMYJAGCDEV!!_Designers\Gregory\CMP1.1\CMResults.nsf</text></item>
+<item name='$PIRCRefreshModTime'><datetime dst='true'>20150423T164752,94-04</datetime></item>
+<item name='$TemplateModTime'><datetime dst='true'>20150423T164734,19-04</datetime></item>
+<item name='$Flags'><text>J7!</text></item>
+<item name='$FlagsNoRefresh'><text/></item>
+<item name='$DefaultXPage'><text>xpCMResults.xsp</text></item>
+<item name='$Daos'><text>0</text></item>
+<item name='$TITLE'><text>Courts Martial Results
+#1CMP-DEV</text></item></note>
+

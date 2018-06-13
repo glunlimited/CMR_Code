@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:dialog id="dlgRejectStatement" title="Reject Result Statement"
+		style="width:350px;">
+		<xp:panel style="width:343.0px" id="panelRejectStatement">
+			<xp:table>
+				<xp:tr>
+					<xp:td>
+						&#160;
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:label id="lbl_RejectStatement"
+							value="Reason for reopening case:" for="fld_ReopenReason">
+						</xp:label>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>
+						<xp:inputTextarea id="fld_RejectStatement"
+							style="height:100.0px;width:300.0px"
+							styleClass="" required="true"
+							value="#{viewScope.ReopenReason}">
+							<xp:this.validators>
+								<xp:validateRequired
+									message="Enter the reason the document is being rejected.">
+
+								</xp:validateRequired>
+							</xp:this.validators>
+						</xp:inputTextarea>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td align="right">
+						<xp:button value="Ok" id="button1">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" refreshId="panelReopen">
+								<xp:this.action><![CDATA[#{javascript:caseReopen();
+}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Cancel" id="button2">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial">
+								<xp:this.action><![CDATA[#{javascript:var dlgReopen = getComponent("dlgReopenCase");
+dlgReopen.hide();}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+					</xp:td>
+				</xp:tr>
+			</xp:table>
+		</xp:panel>
+		<xp:eventHandler event="onHide" submit="true"
+			refreshMode="partial" refreshId="panelBody">
+		</xp:eventHandler></xe:dialog>
+</xp:view>

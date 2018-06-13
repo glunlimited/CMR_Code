@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	
+	<xp:table style="width:200.0px">
+		<xp:tr styleClass="navRow" id="tr1">
+			<xp:td>
+				<xp:link escape="true" text="Who Am I?" id="link1"
+					styleClass="navLink">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="idContanerViewControls"
+						onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');">
+						<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccWhoAmI");
+//context.redirectToPage("xpCMResults.xsp");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:td>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" refreshId="idContanerViewControls"
+				onComplete="XSP.partialRefreshGet('#{id:fldBannerMenuText}');">
+				<xp:this.action><![CDATA[#{javascript:viewScope.put("viewControl","ccWhoAmI");}]]></xp:this.action>
+			</xp:eventHandler></xp:tr>
+	</xp:table></xp:view>

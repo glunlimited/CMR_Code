@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='CovertDatetoText' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='85258288000D10AA' hide='v3' publicaccess='false'
+ designerversion='8.5.3'>
+<noteinfo noteid='19e' unid='ABD6A91A97BAEFBD85257CEE00671313' sequence='3'>
+<created><datetime dst='true'>20140605T144550,91-04</datetime></created>
+<modified><datetime dst='true'>20180508T222244,33-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140134,84-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222244,33-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222244,33-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<designchange><datetime dst='true'>20150430T140135,68-04</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='selected'/><code event='action'><formula>dtPunish := @Text(dtPunishmentImposed;"D0");
+FIELD dtPunishmentImposed := @DeleteField;
+FIELD dtPunishmentImposed := dtPunish;
+SELECT @All</formula></code>
+<rundata processeddocs='74' exitcode='0'>
+<agentmodified><datetime dst='true'>20140605T145637,71-04</datetime></agentmodified>
+<agentrun><datetime dst='true'>20140605T145721,55-04</datetime></agentrun>
+<runlog>Started running agent 'CovertDatetoText' on 06/05/2014 02:57:21 PM
+Running on selected documents: 74 total
+Found 74 document(s) that match search criteria
+74 document(s) were modified by formula
+Done running agent 'CovertDatetoText' on 06/05/2014 02:57:21 PM
+</runlog></rundata></agent>
+

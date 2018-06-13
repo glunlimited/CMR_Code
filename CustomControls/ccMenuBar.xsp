@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" dojoParseOnLoad="true"
+	dojoTheme="true" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:table style="width:100%">
+		<xp:tr>
+			<xp:td style="width:30%;text-align:left" id="menuBar">
+				
+				
+				<xp:span
+					rendered="#{javascript:if(viewScope.isAdmin || !viewScope.hideMenu){return false}else{return true}}"> </xp:span>
+
+				  
+
+				  
+
+				</xp:td>
+			<xp:td style="width:50%">
+			</xp:td>
+			<xp:td style="width:20%">
+			<xp:panel id="pnlSearchBox"
+				rendered="#{javascript:database.isFTIndexed();}">
+				<xp:inputText id="searchText"
+					value="#{viewScope.searchValue}" defaultValue="Search..."
+					themeId="InputField.EditBox.search" disableModifiedFlag="true">
+					<xp:eventHandler event="onfocus" submit="false"
+						id="eventHandler1">
+
+						<xp:this.script><![CDATA[var searchField = '#{javascript:getClientId("searchText");}';
+var me = document.getElementById(searchField);
+if (me.value === "Search...")
+{
+	me.value = ""
+}]]></xp:this.script>
+					</xp:eventHandler>
+					<xp:eventHandler event="onkeypress" submit="true"
+						id="eventHandler2">
+						<xp:this.handlers>
+							<xp:handler type="text/javascript">
+								<xp:this.script><![CDATA[if (thisEvent.keyCode != '13') {
+	return false;
+}
+]]></xp:this.script>
+							</xp:handler>
+						</xp:this.handlers>
+						<xp:this.action>
+							<xp:actionGroup>
+
+								<xp:openPage>
+									<xp:this.name><![CDATA[#{javascript://"/allDocuments.xsp?vm=0&searchValue=" + viewScope.searchValue;
+//"/xpSearchResults.xsp?vm=0&searchValue=" + viewScope.searchValue;
+"/xpCases.xsp?vm=0&viewControl=ccAllCaseDocsByCaseNumber&viewFilter=*&viewTitle=All%20Search%20Results&searchValue=" + viewScope.searchValue;}]]></xp:this.name>
+								</xp:openPage>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:inputText>
+				<xp:link escape="true" id="linkSubmit"
+					title="Submit Search" style="cursor:pointer;" role="link">
+					<xp:image id="imageSearch" alt="Submit Search"
+						themeId="Image.searchButton" url="/xpSearch_oneUI.gif">
+					</xp:image>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete" id="eventHandler3">
+						<xp:this.action>
+							<xp:actionGroup>
+
+
+
+
+
+								<xp:openPage>
+									<xp:this.name>
+										<![CDATA[#{javascript://"/allDocuments.xsp?vm=0&searchValue=" + viewScope.searchValue;
+//"/xpSearchResults.xsp?vm=0&searchValue=" + viewScope.searchValue;
+var url = "xpCases.xsp?vm=0&viewControl=ccAllCaseDocsByCaseNumber&viewFilter=*&viewTitle=All%20Search%20Results&searchValue=" + viewScope.searchValue;
+context.redirectToPage(url);}]]>
+									</xp:this.name>
+								</xp:openPage>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:panel>
+			</xp:td>
+		</xp:tr>
+	</xp:table>
+	<xp:eventHandler event="onfubar" id="eventHandler1a"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpMyRegionOpen.xsp"></xp:openPage>
+		</xp:this.action>
+		<xp:this.onStart><![CDATA[alert("OnStart")]]></xp:this.onStart>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler1b"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpMyRegionClosed.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler2a"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpAllRegionsOpen.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler2b"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpAllRegionsClosed.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler2c"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpAllRegionsByRegion.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler2d"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpAllRegionsByCharge.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler4a"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpMyProfile.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler4b"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpUsers.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler4c"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpRegions.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler4d"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpKeywords.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+	<xp:eventHandler event="onfubar" id="eventHandler4e"
+		submit="false">
+		<xp:this.action>
+			<xp:openPage name="/xpDeletedCases.xsp"></xp:openPage>
+		</xp:this.action>
+	</xp:eventHandler>
+</xp:view>

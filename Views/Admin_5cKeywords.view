@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='Admin\Keywords' alias='vwKWManage' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.0' replicaid='85258288000D10AA' showinmenu='true'
+ publicaccess='false' designerversion='8.5.3' comment='SELECT Form = "frmParameter" &amp; TypeTX = "Keyword"'
+ unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator' headers='simple'
+ opencollapsed='true' showresponsehierarchy='true' showmargin='true' shrinkrows='true'
+ extendlastcolumn='false' showhierarchies='false' unreadcolor='black' rowlinecount='9'
+ headerlinecount='1' rowspacing='1' bgcolor='white' altrowcolor='#efefef'
+ totalscolor='gray' headerbgcolor='#e6edf2' boldunreadrows='false' evaluateactions='false'
+ allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
+ marginwidth='0px' marginbgcolor='white' uniquekeys='false' initialbuildrestricted='false'
+ noemptycategories='true'>
+<noteinfo noteid='272' unid='A214FFEFD1796E1B85257D38004AB6C5' sequence='9'>
+<created><datetime dst='true'>20140818T093604,53-04</datetime></created>
+<modified><datetime dst='true'>20180508T222245,25-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140132,79-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222245,25-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222245,25-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Michael L Jones/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby><code
+ event='selection'><formula>SELECT Form = "frmKeyword"</formula></code>
+<actionbar bgcolor='white' bordercolor='black'>
+<actionbuttonstyle bgcolor='white' displayborder='notesstyle'/><font size='8pt'
+ name='arial' pitch='variable' truetype='true' familyid='20'/><border style='solid'
+ width='0px 0px 1px' color='#395470'/>
+<action title='Edit' icon='5' hide='edit previewedit web mobile'><code event='click'><formula
+>@If(@IsError(@Command([EditDocument])); @Prompt([Ok]; "Error"; "Must select a document"); "")</formula></code><code
+ event='hidewhen'><formula>!@IsMember("[DBAdmin]"; @UserRoles)</formula></code></action>
+<action title='New Parameter' icon='12'><code event='click'><formula>@Command([Compose];"frmKeyword")</formula></code></action>
+<action title='Expand All' icon='154' hide='edit previewedit'><code event='click'><formula
+>@Command([ViewExpandAll])</formula></code></action>
+<action title='Collapse All' icon='155' hide='edit previewedit'><code event='click'><formula
+>@Command([ViewCollapseAll])</formula></code></action>
+<action title='Set Active' icon='15' showinmenu='false'><code event='click'><formula
+>@Command([ToolsRunMacro];"(SetActive)")</formula></code></action>
+<action title='Set Inactive' icon='16' showinmenu='false'><code event='click'><formula
+>@Command([ToolsRunMacro];"(SetInactive)")</formula></code></action>
+<action title='Delete Record' icon='4' showinmenu='false'><code event='click'><formula
+>@Command([ToolsRunMacro];"(DeleteDocument)")</formula></code></action></actionbar>
+<column hidedetailrows='false' itemname='$0' width='4.2500' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'
+ showasicons='true'><columnheader title='Status'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@If(StatusTX="Draft" | StatusTX="Inactive"; 115;114)</formula></code></column>
+<column sort='ascending' hidedetailrows='false' itemname='Category' width='10'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' categorized='true'><columnheader title='Category'><font
+ size='9pt' style='bold'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' listseparator='newline' itemname='Keyword'
+ width='10' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
+ sortnocase='true' showaslinks='false'><columnheader title='Keyword'><font
+ size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' listseparator='newline' itemname='Choices'
+ width='21' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
+ sortnocase='true' showaslinks='false'><columnheader title='Choices'><font
+ size='9pt' style='bold'/></columnheader></column></view>
+

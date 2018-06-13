@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='Keyword' alias='frmKeyword' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='85258288000D10AA' hide='web' publicaccess='false'
+ designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='29a' unid='AFAD0D696699DB0485257D38004AA106' sequence='9'>
+<created><datetime dst='true'>20140818T093508,86-04</datetime></created>
+<modified><datetime dst='true'>20180508T222245,45-04</datetime></modified>
+<revised><datetime dst='true'>20150430T140134,96-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20180508T222245,45-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180508T222245,45-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Michael L Jones/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=JAGC Admin/OU=AJ/O=ARMYJAGC</name><name
+>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></updatedby>
+<wassignedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<pardef id='2' leftmargin='0.7500in'><code event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<section><sectiontitle pardef='2' color='red'><font size='8pt' style='bold'/><text
+>Local Hidden Fields</text></sectiontitle>
+<pardef id='3' firstlineleftmargin='1in'><code event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='3'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/></run></par>
+<table cellbordercolor='red' widthtype='fixedleft' refwidth='6.1347in'><tablecolumn
+ width='1in'/><tablecolumn width='1.5000in'/><tablecolumn width='3.6347in'/>
+<tablerow>
+<tablecell>
+<pardef id='5' align='center' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='5'><run><font size='8pt' style='bold' name='Arial' pitch='variable'
+ truetype='true' familyid='20' color='red'/>Field Name</run></par></tablecell>
+<tablecell>
+<pardef id='6' align='center' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='6'><run><font size='8pt' style='bold' name='Arial' pitch='variable'
+ truetype='true' familyid='20' color='red'/>Field Contents</run></par></tablecell>
+<tablecell>
+<pardef id='7' align='center' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='7'><run><font size='8pt' style='bold' name='Arial' pitch='variable'
+ truetype='true' familyid='20' color='red'/>Field Description</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='8' leftmargin='0.0625in' rightmargin='0.9375in' tabs='L0.5000in L1in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='8'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>SaveOptions</run></par></tablecell>
+<tablecell>
+<pardef id='9' leftmargin='0.0625in' rightmargin='1.4375in' keepwithnext='true'
+ keeptogether='true'><code event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='9'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/></run><run><font size='8pt' color='red' name='Arial'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
+ name='SaveOptions'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='11' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run
+><font size='8pt' name='Arial' pitch='variable' truetype='true' familyid='20'
+ color='red'/></run></par></tablecell>
+<tablecell>
+<pardef id='10' leftmargin='0.0625in' rightmargin='3.5625in' keepwithnext='true'
+ keeptogether='true'><code event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='10'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>When set to a numeric zero value, it prevents a copy of this document from ever being saved to the database. This document is simply created in order to host the subform --&gt; Web - Layout - Global</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='11' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='11'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>  DocId</run></par></tablecell>
+<tablecell>
+<pardef id='12' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='12'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/> </run><run><font size='8pt' color='red' name='Arial'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computedwhencomposed'
+ name='DocId'><code event='defaultvalue'><formula>Temp1 := @TextToTime(@If(@Contains(@Platform; "OS/2"); "1-1-"; "1/1/") + @Text(@Right(@Text(@Year(@Now)); 2)) + " 12:00 AM");
+Temp2 := @Now - Temp1;
+"KW" +"-" + @Text(@Year(@Today);D3) + "-" + @If(@Length(@Text(Temp2)) &lt; 8; "0"+@Text(Temp2); @Text(Temp2))</formula></code></field></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='11' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Arial' pitch='variable' truetype='true' familyid='20' color='red'/></run></par></tablecell>
+<tablecell>
+<pardef id='13' spaceafter='2' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='13'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>Unique permanent sequence of character and numbers that can be used to identify this document.</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='14' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='14'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/> ParentDocId</run></par></tablecell>
+<tablecell>
+<pardef id='15' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='15'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/> </run><run><font size='8pt' color='red' name='Arial'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computedwhencomposed'
+ name='ParentDocId'><code event='defaultvalue'><formula>""</formula></code></field></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='11' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Arial' pitch='variable' truetype='true' familyid='20' color='red'/></run></par></tablecell>
+<tablecell>
+<par def='13'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>Unique permanent sequence of character and numbers that can be used to identify the parent to this document.</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>FormName</run></par></tablecell>
+<tablecell>
+<par def='9'><run><font size='8pt' color='red'/><field type='text' kind='computedwhencomposed'
+ name='FormName'><code event='defaultvalue'><formula>"Keyword"</formula></code></field></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Arial' pitch='variable' truetype='true' familyid='20' color='red'/></run></par></tablecell>
+<tablecell>
+<par def='10'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>General form name.</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='8'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>Sysdoc</run></par></tablecell>
+<tablecell>
+<par def='9'><run><font size='8pt' color='red'/><field type='text' kind='computedwhencomposed'
+ name='Sysdoc'><code event='defaultvalue'><formula>"Yes"</formula></code></field></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Arial' pitch='variable' truetype='true' familyid='20' color='red'/></run></par></tablecell>
+<tablecell>
+<pardef id='16' leftmargin='0.0625in' rightmargin='3.5625in' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'><code event='hidewhen' enabled='false'><formula
+>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='16'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/>Indicates if the document is a system document require for the system to function.</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='17' keepwithnext='true' keeptogether='true'><code event='hidewhen'
+ enabled='false'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='17'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/></run></par></tablecell>
+<tablecell>
+<pardef id='18' keepwithnext='true' keeptogether='true'><code event='hidewhen'
+ enabled='false'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='18'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/> </run></par></tablecell>
+<tablecell>
+<pardef id='19' keepwithnext='true' keeptogether='true'><code event='hidewhen'
+ enabled='false'><formula>!@IsMember("[Programmer]"; @UserRoles)</formula></code></pardef>
+<par def='19'><run><font size='8pt' name='Arial' pitch='variable' truetype='true'
+ familyid='20' color='red'/></run></par></tablecell></tablerow></table>
+<pardef id='4' firstlineleftmargin='1in' hide='notes web'/>
+<par def='4'><run><font size='8pt' color='red'/></run></par>
+<par def='4'><run><font size='8pt' color='red'/></run></par></section>
+<par def='1'>Keyword: <field type='text' kind='editable' name='Keyword'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='1'>Category: <field type='text' kind='editable' name='Category'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='1'>Choices: <field type='text' allowmultivalues='true' kind='editable'
+ name='Choices' listinputseparators='newline' listdisplayseparator='newline'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='4'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='1'>Default:  <field type='text' kind='editable' name='DefaultChoice'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='1'>Comment: <field type='text' kind='editable' name='Comment'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='1'>Attachments	<field type='richtext' kind='editable' name='Attachments'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAEAAAA=
+</compositedata></par>
+<par def='1'>Authors: <field type='authors' allowmultivalues='true' kind='computed'
+ name='Authors' listinputseparators='comma' listdisplayseparator='comma'><code
+ event='defaultvalue'><formula>@If(Category="System";"[System]";"[System]":"[Admin]")</formula></code></field></par>
+<par def='1'>Readers: <field type='readers' allowmultivalues='true' kind='computed'
+ name='Readers' listinputseparators='comma semicolon' listdisplayseparator='semicolon'><code
+ event='defaultvalue'><formula>"*"</formula></code></field></par></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>Keyword</text></item></form>
+

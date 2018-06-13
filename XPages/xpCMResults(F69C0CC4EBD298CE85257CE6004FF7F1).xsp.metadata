@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="85258288000D10AA" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="18a" sequence="3843" unid="F69C0CC4EBD298CE85257CE6004FF7F1">
+<created><datetime dst="true">20140528T103328,17-04</datetime></created>
+<modified><datetime dst="true">20180613T110653,38-04</datetime></modified>
+<revised><datetime dst="true">20180613T110653,37-04</datetime></revised>
+<lastaccessed><datetime dst="true">20180613T110653,38-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180508T222244,25-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Gregory L Washington/OU=AJ/O=ARMYJAGC</name><name>CN=Admin Glunlimited/O=Development</name><name>CN=Admin Glunlimited/O=development</name></updatedby>
+<wassignedby><name>CN=Admin Glunlimited/O=development</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE"><text>xpCMResults.xsp</text></item>
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>xpCMResults.xsp</text></item>
+
+
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+</note>
